@@ -1,6 +1,7 @@
 # :zap: Angular Tailwind RATP
 
-* Angular 11 app using [Webpack v5](https://webpack.js.org/) & [Tailwindcss](https://developers.google.com/chart/) components to display information from the [RATP API](https://api-ratp.pierre-grimaud.fr/v4/)
+* Angular 11 app using [Webpack v5](https://webpack.js.org/) & [Tailwindcss](https://developers.google.com/chart/) components to display information from the [Paris Public Transport RATP API](https://data.ratp.fr/explore/?sort=modified&refine.publisher=RATP)
+* Website is in French
 
 *** Note: to open web links in a new window use: _ctrl+click on link_**
 
@@ -21,6 +22,7 @@
 
 ## :books: General info
 
+* [Tailwind Responsive Table](https://tailwindcomponents.com/component/responsive-table-1) used to show RATP data
 * Webpack explained in [Webpack documentation Concepts](https://webpack.js.org/concepts/)
 * To build for production Tailwind’s purge option is used to tree-shake unused styles and optimize final build size.
 * `angular.json` file modified to use custom builder and `webpack.config.js` file
@@ -59,12 +61,12 @@
 
 ## :cool: Features
 
-* Tailwindcss xxx component simply copy-pasted into app.
+* RATP API does not require an API key
 
 ## :clipboard: Status & To-Do List
 
 * Status: In work. All files pass linting. App passes unit tests. e2e testing not set up so doesn't pass. Build file is a compact xxxkb thanks to Tailwind’s purge option (manually enabled in `tailwind.config.js`) that tree-shakes unused styles and optimizes the final build size.
-* To-Do: Nothing
+* To-Do: add ngForm post code search
 
 ## :clap: Inspiration
 

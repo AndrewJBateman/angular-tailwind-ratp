@@ -1,0 +1,28 @@
+nav {
+  border-bottom: 1px solid #178d79;
+
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+
+  .nav-heading {
+    color: #178d79
+  }
+
+  .nav-info-text {
+    color: #0D47A1;
+  }
+
+  .nav-menu-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  img {
+    height: 50px;
+    width: 50px;
+    margin-right: 5px;
+  }
+}
+
+
