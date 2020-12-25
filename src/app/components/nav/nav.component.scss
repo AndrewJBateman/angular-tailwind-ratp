@@ -1,28 +1,24 @@
 nav {
   border-bottom: 1px solid #178d79;
-
-  .dropdown:hover .dropdown-menu {
-    display: block;
-  }
+  background: white;
+  height: 4rem;
 
   .nav-heading {
-    color: #178d79
+    color: #178d79;
   }
 
-  .nav-info-text {
-    color: #0D47A1;
-  }
-
-  .nav-menu-icon {
-    width: 40px;
-    height: 40px;
-  }
-
-  img {
+  .nav-left-icon {
     height: 50px;
     width: 50px;
     margin-right: 5px;
   }
+
+  .nav-link {
+    color: #178d79 !important;
+  }
+
+  .nav-link-active {
+    color: #1d6ac2 !important;
+    font-weight: bold;
+  }
 }
-
-

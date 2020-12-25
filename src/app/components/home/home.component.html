@@ -5,11 +5,7 @@
   />
 </head>
 
-<div class="bg-white pb-4 px-4 rounded-md w-full">
-  <!--title div-->
-  <div class="flex justify-between w-full py-6">
-    <p class="ml-3">commerces de proximité agréés RATP</p>
-  </div>
+<div class="bg-white pb-4 px-4 pt-10 rounded-md w-full">
   <!--search bar-->
   <div class="w-full flex justify-end px-2 mt-2">
     <div class="w-full sm:w-64 inline-block relative">
@@ -57,8 +53,9 @@
       </thead>
       <tbody class="text-sm font-normal text-gray-700">
         <tr
-          *ngFor="let data of ratpData;"
-          class="hover:bg-gray-100 border-b border-gray-200 py-10">
+          *ngFor="let data of ratpData"
+          class="hover:bg-gray-100 border-b border-gray-200 py-10"
+        >
           <td class="px-4 py-4">{{ data?.fields?.tco_libelle }}</td>
           <td class="px-4 py-4">{{ data?.fields?.code_postal }}</td>
           <td class="px-4 py-4">{{ data?.fields?.ville }}</td>

@@ -66,7 +66,7 @@
 ## :clipboard: Status & To-Do List
 
 * Status: In work. All files pass linting. App passes unit tests. e2e testing not set up so doesn't pass. Build file is a compact xxxkb thanks to Tailwind’s purge option (manually enabled in `tailwind.config.js`) that tree-shakes unused styles and optimizes the final build size.
-* To-Do: add ngForm post code search
+* To-Do: Contact card, add ngForm post code search, About app card
 
 ## :clap: Inspiration
 

@@ -1,58 +1,39 @@
-<nav class="flex justify-around items-center w-screen bg-white shadow-lg">
-  <div class="p-2 sm:w-1/5">
-    <div class="text-center p-0 flex">
-      <img src="./../../../assets/ratp.png" />
-      <p class="nav-heading text-2xl font-semibold pt-2">RATP</p>
-    </div>
+<nav
+  class="font-sans flex text-center content-center flex-row justify-between pt-1 px-1 bg-white shadow sm:items-baseline w-full"
+>
+  <!--navbar LHS-->
+  <div class="self-center">
+    <a
+      class="nav-link text-md ml-2 px-1"
+      aria-label="home nav link"
+      routerLink="/"
+      routerLinkActive="nav-link-active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      <div class="text-center flex">
+        <img class="nav-left-icon" src="./../../../assets/ratp.png" />
+        <p class="pt-3">Commerces</p>
+      </div>
+    </a>
   </div>
-  <div class="dropdown cursor-pointer p-1 mr-2 flex items-center">
-    <div class="">
-      <img class="nav-menu-icon" src="./../../../assets/menu-24px.svg" alt="avatar">
-    </div>
-    <div class="">
-      <span class="nav-info-text text-1xl font-semibold ml-1">App. Info.</span>
-    </div>
-    <div class="rounded-md shadow-sm flex">
-      <button
-        onclick="clicaParaAbrirMenu()"
-        class="flex justify-center items-center block h-3 w-3 overflow-hidden focus:outline-none"
-      >
-        <div
-          id="Seta"
-          class="animate-ping inline-flex h-full w-full rounded-full text-gray-700 opacity-75"
-        >
-          <svg
-            class="h-3 w-3 text-white"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-              clip-rule="evenodd"
-            />
-          </svg>
-        </div>
-      </button>
-      <ul
-        class="dropdown-menu absolute w-30 bg-white rounded-lg shadow-xl mt-5 -ml-48 hidden sm:mr-24 md:mr-32 lg:mr-48 xl:mr-64s"
-      >
-        <li class="">
-          <a
-            class="rounded-t text-blue-900 hover:bg-gray-600 hover:text-white py-2 px-4 block whitespace-no-wrap"
-            href="#"
-            >About</a
-          >
-        </li>
-        <li class="">
-          <a
-            class="text-blue-900 hover:bg-gray-600 hover:text-white py-2 px-4 block whitespace-no-wrap"
-            href="#"
-            >Contact</a
-          >
-        </li>
-      </ul>
-    </div>
+
+  <!--navbar RHS-->
+  <div class="self-center">
+    <a
+      class="nav-link text-md ml-2 px-1"
+      aria-label="about nav link"
+      routerLink="/about"
+      routerLinkActive="nav-link-active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      >About</a
+    >
+    <a
+      class="nav-link text-md ml-2 px-1"
+      aria-label="contact nav link"
+      routerLink="/contact"
+      routerLinkActive="nav-link-active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      >Contact</a
+    >
   </div>
 </nav>
