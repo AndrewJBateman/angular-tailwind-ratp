@@ -5,32 +5,77 @@
   />
 </head>
 
-<div class="bg-white pb-4 px-4 pt-10 rounded-md w-full">
+<div class="bg-white pb-4 px-4 pt-5 rounded-md w-full">
   <!--search bar-->
-  <div class="w-full flex justify-end px-2 mt-2">
-    <div class="w-full sm:w-64 inline-block relative">
-      <input
-        type=""
-        name=""
-        class="leading-snug border border-gray-300 block w-full appearance-none bg-gray-100 text-sm text-gray-600 py-1 px-4 pl-8 rounded-lg"
-        placeholder="Search"
-      />
-
-      <div
-        class="pointer-events-none absolute pl-3 inset-y-0 left-0 flex items-center px-2 text-gray-300"
-      >
-        <svg
-          class="fill-current h-3 w-3"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 511.999 511.999"
+  <form
+    #postCodeSearch="ngForm"
+    method="POST"
+    (ngSubmit)="submitForm(postCodeSearch); postCodeSearch.reset()"
+  >
+    <div class="input-group mb-0">
+      <div class="max-w-xs relative text-lg bg-transparent text-gray-800">
+        <div
+          class="search-bar rounded-lg flex items-center border-b border-b-3 border-teal-500 py-2"
         >
-          <path
-            d="M508.874 478.708L360.142 329.976c28.21-34.827 45.191-79.103 45.191-127.309C405.333 90.917 314.416 0 202.666 0S0 90.917 0 202.667s90.917 202.667 202.667 202.667c48.206 0 92.482-16.982 127.309-45.191l148.732 148.732c4.167 4.165 10.919 4.165 15.086 0l15.081-15.082c4.165-4.166 4.165-10.92-.001-15.085zM202.667 362.667c-88.229 0-160-71.771-160-160s71.771-160 160-160 160 71.771 160 160-71.771 160-160 160z"
+          <input
+            class="form-control bg-transparent border-none mr-3 px-2 leading-tight focus:outline-none"
+            required
+            ngModel
+            name="search"
+            type="search"
+            placeholder="tapez le code postal"
+            aria-label="Enter postcode"
+            minlength="5"
           />
-        </svg>
+          <button type="submit" class="absolute right-0 top-0 mt-3 mr-4">
+            <svg
+              class="h-4 w-4 fill-current"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              version="1.1"
+              id="Capa_1"
+              x="0px"
+              y="0px"
+              viewBox="0 0 56.966 56.966"
+              style="enable-background: new 0 0 56.966 56.966"
+              xml:space="preserve"
+              width="512px"
+              height="512px"
+            >
+              <path
+                d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23  s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92  c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17  s-17-7.626-17-17S14.61,6,23.984,6z"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+
+  <!--summary panel-->
+  <div class="max-w-xs" *ngIf="ratpData">
+    <div class="info-card bg-white shadow-xl rounded-lg">
+      <div class="p-1">
+        <table class="text-xs my-2">
+          <tbody>
+            <tr>
+              <td class="px-2 text-gray-500 font-semibold">
+                <span class="text-gray-900 font-bold">Code Postale:</span>
+              </td>
+              <td class="px-2">{{ postalCode }}</td>
+            </tr>
+            <tr>
+              <td class="px-2 text-gray-500 font-semibold">
+                <span class="text-gray-900 font-bold">Ville:</span>
+              </td>
+              <td class="px-2">{{ ville }}</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
+
   <!--table-->
   <div class="overflow-x-auto mt-6">
     <table class="table-auto border-collapse w-full">
@@ -39,16 +84,9 @@
           class="rounded-lg text-sm font-medium text-gray-700 text-left"
           style="font-size: 0.9674rem"
         >
-          <th class="px-4 py-2 bg-gray-200" style="background-color: #f8f8f8">
-            Nom
-          </th>
-          <th class="px-4 py-2" style="background-color: #f8f8f8">
-            Code Postale
-          </th>
-          <th class="px-4 py-2" style="background-color: #f8f8f8">Ville</th>
-          <th class="px-4 py-2" style="background-color: #f8f8f8">
-            Jours Ferme
-          </th>
+          <th class="column-header px-4 py-2">Nom</th>
+          <th class="column-header px-4 py-2">Adresse</th>
+          <th class="column-header px-4 py-2">Jours Ferme</th>
         </tr>
       </thead>
       <tbody class="text-sm font-normal text-gray-700">
@@ -57,15 +95,14 @@
           class="hover:bg-gray-100 border-b border-gray-200 py-10"
         >
           <td class="px-4 py-4">{{ data?.fields?.tco_libelle }}</td>
-          <td class="px-4 py-4">{{ data?.fields?.code_postal }}</td>
-          <td class="px-4 py-4">{{ data?.fields?.ville }}</td>
+          <td class="px-4 py-4">{{ data?.fields?.dea_numero_rue_livraison_dea_rue_livraison }}</td>
           <td class="px-4 py-4">{{ data?.fields?.dea_fermeture }}</td>
         </tr>
         <tr class="hover:bg-gray-100 border-b border-gray-200 py-4"></tr>
       </tbody>
     </table>
   </div>
-  <div
+  <!-- <div
     id="pagination"
     class="w-full flex justify-center border-t border-gray-100 pt-4 items-center"
   >
@@ -116,25 +153,5 @@
         fill="#18A0FB"
       />
     </svg>
-  </div>
+  </div> -->
 </div>
-
-<style>
-  thead tr th:first-child {
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-  }
-  thead tr th:last-child {
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-  }
-
-  tbody tr td:first-child {
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 0px;
-  }
-  tbody tr td:last-child {
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 0px;
-  }
-</style>

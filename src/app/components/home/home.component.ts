@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from "@angular/forms";
 
 import { environment } from '../../../environments/environment';
 import { RatpService } from '../../services/ratp.service';
@@ -10,14 +11,31 @@ import { RatpService } from '../../services/ratp.service';
 })
 export class HomeComponent implements OnInit {
   name = environment.application.name;
-  ratpData;
+  ratpData: any;
+  postalCode: string;
+  ville: string;
+  form: NgForm;
+  displayCleared = false;
 
   constructor(private ratpService: RatpService) {}
 
   ngOnInit(): void {
-    this.ratpService.getRatpData('95870').subscribe((data: any) => {
+  }
+
+  submitForm(postCodeSearch: any) {
+    console.log('submitForm using postCodeSearch.value.search:', postCodeSearch.value.search);
+    this.onSearchData(postCodeSearch.value.search);
+  }
+
+  onSearchData(postCode: string): void {
+    this.ratpService.getRatpData(postCode).subscribe((data: any) => {
       this.ratpData = data.records;
-      console.log('ratpData: ', this.ratpData);
+      this.postalCode = this.ratpData[0].fields.code_postal;
+      this.ville = this.ratpData[0].fields.ville;
     });
+  }
+
+  clearSearch() {
+    this.displayCleared = true;
   }
 }

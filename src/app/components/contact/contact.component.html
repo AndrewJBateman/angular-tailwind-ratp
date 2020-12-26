@@ -4,41 +4,44 @@
 
 <div class="flex mx-auto mt-20 h-screen w-full justify-center" *ngIf="user">
   <div class="max-w-xs">
-    <div class="user-card bg-white shadow-xl rounded-lg">
-      <div class="photo-wrapper p-2 pt-5">
+    <div class="info-card bg-white shadow-xl rounded-lg">
+      <div class="photo-wrapper px-2 pt-5">
         <img
-          class="w-32 h-32 rounded-full mx-auto"
+          class="w-40 h-40 rounded-full mx-auto"
           [src]="user.avatar_url"
           alt="Github user profile photo"
         />
       </div>
       <div class="p-2">
-
-        <h3 class="text-center text-xl text-gray-900 font-medium leading-8">
+        <h3
+          class="text-center text-xl text-gray-900 font-medium leading-8 pb-1"
+        >
+          <span class="text-xs text-gray-500 italic">App par</span>
           {{ user.name }}
         </h3>
-        <div class="px-1 text-center text-gray-600 text-xs font-semibold">
+        <div class="px-2 text-center text-gray-600 text-xs font-semibold">
           <p class="pb-1">
-            {{ user.bio }}
+            <span class="text-gray-900 font-bold">{{ userBio | slice: 0 : 42}} </span>
+            {{ userBio | slice: 42}}
           </p>
         </div>
-        <table class="text-xs my-3">
+        <table class="text-xs my-2">
           <tbody>
             <tr>
               <td class="px-2 text-gray-500 font-semibold">
-                <span class="text-gray-900 font-bold">Repos:</span>
+                <span class="text-gray-900 font-bold">Github Repos:</span>
               </td>
               <td class="px-2">{{ user.public_repos }}</td>
             </tr>
             <tr>
               <td class="px-2 text-gray-500 font-semibold">
-                <span class="text-gray-900 font-bold">Location:</span>
+                <span class="text-gray-900 font-bold">Emplacement:</span>
               </td>
-              <td class="px-2">{{ user.location }}</td>
+              <td class="px-2">Spain, France</td>
             </tr>
             <tr>
               <td class="px-2 text-gray-500 font-semibold">
-                <span class="text-gray-900 font-bold">Updated:</span>
+                <span class="text-gray-900 font-bold">Mis à Jour</span>
               </td>
               <td class="px-2">{{ user.updated_at | date }}</td>
             </tr>
@@ -47,12 +50,19 @@
 
         <div class="text-center my-3">
           <a
-            class="text-xs text-indigo-500 italic hover:underline hover:text-indigo-600 font-medium"
+            class="text-xs text-indigo-600 italic hover:underline hover:text-indigo-800 font-medium mr-5"
             href="https://github.com/AndrewJBateman"
             target="_blank"
             rel="noopener noreferrer"
-            >View Github Profile</a
+            >Voir mon profil Github</a
           >
+          <a
+          class="text-xs text-indigo-600 italic hover:underline hover:text-indigo-800 font-medium"
+          href="https://andrewbateman.org/contact"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Envoyer un message</a
+        >
         </div>
       </div>
     </div>

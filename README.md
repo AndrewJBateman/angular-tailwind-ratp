@@ -61,12 +61,13 @@
 
 ## :cool: Features
 
-* RATP API does not require an API key
+* The RATP API does not require an API key
+* The Github API does not require an API key for a user search
 
 ## :clipboard: Status & To-Do List
 
 * Status: In work. All files pass linting. App passes unit tests. e2e testing not set up so doesn't pass. Build file is a compact xxxkb thanks to Tailwind’s purge option (manually enabled in `tailwind.config.js`) that tree-shakes unused styles and optimizes the final build size.
-* To-Do: Contact card, add ngForm post code search, About app card
+* To-Do: add about page, add ngForm post code search, translate in to French, add translation button
 
 ## :clap: Inspiration
 
@@ -74,6 +75,7 @@
 * [Tailwindcss docs: Optimizing for Production](https://tailwindcss.com/docs/optimizing-for-production#setting-up-purgecss)
 * [Trungk18.com: How to configure TailwindCSS with Angular and why you should use it](https://trungk18.com/experience/configure-tailwind-css-with-angular/)
 * [Angular Architects: article: Extending the Angular CLI’s build process without ejecting](https://www.angulararchitects.io/aktuelles/extending-the-angular-clis-build-process/)
+* [List of French postal codes](http://www.bioreference.net/encyclopedia/wikipedia/l/li/list_of_french_postal_codes.html)
 
 ## :envelope: Contact
 

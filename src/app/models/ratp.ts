@@ -3,7 +3,7 @@ export interface RatpResponse {
   facet_groups: Facet_Group[];
   nhits: number;
   parameters: Parameter[];
-  records: []
+  records?: Record[];
 }
 
 export interface Facet_Group {
@@ -32,4 +32,16 @@ export interface Parameter {
   ];
   start: number;
   timezone: string;
+}
+
+export interface Record {
+  field: {
+    code_postal: number;
+    dea_fermeture: string;
+    dea_numero_rue_livraison_dea_rue_livraison: string;
+    tco_libelle: string;
+    ville: string;
+    record_timestamp: string;
+    recordid: string
+  }
 }
