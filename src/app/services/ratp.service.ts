@@ -14,15 +14,13 @@ export class RatpService {
   constructor(private http: HttpClient) {}
 
   getRatpData(query: string): Observable<RatpResponse> {
-    console.log('ratp service search string: ', typeof(query), query);
     const userSearchUrl = `${baseUrl}dataset=liste-des-commerces-de-proximite-agrees-ratp&q=${query}&rows=1052&sort=-code_postal&facet=tco_libelle&facet=code_postal`;
-    console.log('url string: ', userSearchUrl);
     return this.http.get<RatpResponse>(userSearchUrl).pipe(
-      tap((data: RatpResponse) => console.log('service data: ', data)),
+      tap((data: RatpResponse) => console.log('RATP service data: ', data)),
       map((data: RatpResponse) => data),
       catchError((err) => {
         return throwError(
-          'There was a problem fetching data from Github API, error: ',
+          'There was a problem fetching data from the RATP API, error: ',
           err
         );
       })

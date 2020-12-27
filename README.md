@@ -1,7 +1,6 @@
 # :zap: Angular Tailwind RATP
 
 * Angular 11 app using [Webpack v5](https://webpack.js.org/) & [Tailwindcss](https://developers.google.com/chart/) components to display information from the [Paris Public Transport RATP API](https://data.ratp.fr/explore/?sort=modified&refine.publisher=RATP)
-* Website is in French
 
 *** Note: to open web links in a new window use: _ctrl+click on link_**
 
@@ -23,6 +22,8 @@
 ## :books: General info
 
 * [Tailwind Responsive Table](https://tailwindcomponents.com/component/responsive-table-1) used to show RATP data
+* About and Contact pages give more information on app using Tailwind css cards
+* Website is in French
 * Webpack explained in [Webpack documentation Concepts](https://webpack.js.org/concepts/)
 * To build for production Tailwind’s purge option is used to tree-shake unused styles and optimize final build size.
 * `angular.json` file modified to use custom builder and `webpack.config.js` file
@@ -61,8 +62,7 @@
 
 ## :cool: Features
 
-* The RATP API does not require an API key
-* The Github API does not require an API key for a user search
+* The RATP & Github APIs do not require an API key
 
 ## :clipboard: Status & To-Do List
 

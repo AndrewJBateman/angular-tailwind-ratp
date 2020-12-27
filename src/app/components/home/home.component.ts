@@ -11,11 +11,19 @@ import { RatpService } from '../../services/ratp.service';
 })
 export class HomeComponent implements OnInit {
   name = environment.application.name;
+  form: NgForm;
+
+  // status variables
+  initialState = true;
+  dataToShow = false;
+  displayCleared = false;
+
+  // API data variables
   ratpData: any;
   postalCode: string;
   ville: string;
-  form: NgForm;
-  displayCleared = false;
+  dataLength: number;
+  date: string;
 
   constructor(private ratpService: RatpService) {}
 
@@ -30,8 +38,16 @@ export class HomeComponent implements OnInit {
   onSearchData(postCode: string): void {
     this.ratpService.getRatpData(postCode).subscribe((data: any) => {
       this.ratpData = data.records;
-      this.postalCode = this.ratpData[0].fields.code_postal;
-      this.ville = this.ratpData[0].fields.ville;
+      if (this.ratpData.length > 0) {
+        this.initialState = false;
+        this.dataToShow = true;
+        this.postalCode = this.ratpData[0].fields.code_postal;
+        this.ville = this.ratpData[0].fields.ville;
+        this.dataLength = this.ratpData.length;
+        this.date = this.ratpData[0].record_timestamp;
+      } else if (this.ratpData = []) {
+        this.dataToShow = false;
+      }
     });
   }
 
