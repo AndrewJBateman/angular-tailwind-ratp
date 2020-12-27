@@ -31,7 +31,6 @@ export class HomeComponent implements OnInit {
   }
 
   submitForm(postCodeSearch: any) {
-    console.log('submitForm using postCodeSearch.value.search:', postCodeSearch.value.search);
     this.onSearchData(postCodeSearch.value.search);
   }
 

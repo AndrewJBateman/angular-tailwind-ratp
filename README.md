@@ -30,11 +30,15 @@
 
 ## :camera: Screenshots
 
-![Example screenshot](./img/data.png)
+![Example screenshot](./img/ratp.jpg)
+![Example screenshot](./img/about.jpg)
+![Example screenshot](./img/contact.jpg)
+![Example screenshot](./img/notfound.jpg)
 
 ## :signal_strength: Technologies
 
 * [Angular framework v11](https://angular.io/)
+* [@angular/forms](https://angular.io/api/forms) used with [PatternValidator](https://angular.io/api/forms/PatternValidator)
 * [Webpack v5](https://webpack.js.org/) static module bundler for modern JavaScript applications.
 * [Tailwindcss v2](https://tailwindcss.com/) CSS framework
 * [postcss-loader v4](https://www.npmjs.com/package/postcss-loader) Loader to process CSS with PostCSS. Transformations that are applied to the source code of a module, to pre-process files as you import or “load” them.
@@ -54,20 +58,28 @@
 
 ## :computer: Code Examples
 
-* extract from tba
+* extract from `home.ts` - error card that appears
 
 ```typescript
-
+  <!--Show if no data from API - some postcodes have no RATP commerce-->
+  <div class="max-w-xs" *ngIf="!dataToShow && !initialState">
+    <div class="info-card bg-white shadow-xl rounded-lg">
+      <div class="p-1">
+        <p>Aucune RATP donnée à afficher - essayez un autre code postal</p>
+      </div>
+    </div>
+  </div>
 ```
 
 ## :cool: Features
 
 * The RATP & Github APIs do not require an API key
+* Postcode search form with error messages checks that only a 5-number postcode is entered
 
 ## :clipboard: Status & To-Do List
 
 * Status: In work. All files pass linting. App passes unit tests. e2e testing not set up so doesn't pass. Build file is a compact xxxkb thanks to Tailwind’s purge option (manually enabled in `tailwind.config.js`) that tree-shakes unused styles and optimizes the final build size.
-* To-Do: add about page, add ngForm post code search, translate in to French, add translation button
+* To-Do: pwa, add test, e2e test, translations,
 
 ## :clap: Inspiration
 
