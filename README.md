@@ -2,6 +2,12 @@
 
 * Angular 11 app using [Webpack v5](https://webpack.js.org/) & [Tailwindcss](https://developers.google.com/chart/) components to display information from the [Paris Public Transport RATP API](https://data.ratp.fr/explore/?sort=modified&refine.publisher=RATP)
 
+![GitHub repo size](https://img.shields.io/github/repo-size/AndrewJBateman/angular-tailwind-ratp?style=for-the-badge)
+![GitHub issues](https://img.shields.io/github/issues/AndrewJBateman/angular-tailwind-ratp?style=for-the-badge)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/AndrewJBateman/angular-tailwind-ratp?style=for-the-badge)
+![GitHub Repo stars](https://img.shields.io/github/stars/AndrewJBateman/angular-tailwind-ratp?style=for-the-badge)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/AndrewJBateman/angular-tailwind-ratp?style=for-the-badge)
+
 *** Note: to open web links in a new window use: _ctrl+click on link_**
 
 ## :page_facing_up: Table of contents
@@ -27,6 +33,8 @@
 * Webpack explained in [Webpack documentation Concepts](https://webpack.js.org/concepts/)
 * To build for production Tailwind’s purge option is used to tree-shake unused styles and optimize final build size.
 * `angular.json` file modified to use custom builder and `webpack.config.js` file
+* **important** npm postcss-loader [must be v4.2.0 and not latest version - ref. Stackoverflow](https://stackoverflow.com/questions/66082397/typeerror-this-getoptions-is-not-a-function) or there will be lots of errors and no dev server
+* [rxjs take(1) operater](https://advancedweb.hu/rxjs-the-differences-between-first-take-1-and-single/) used to take first element from the Ratp & Github observable streams then close them, so unsubscribing is not necessary.
 
 ## :camera: Screenshots
 
@@ -39,6 +47,7 @@
 
 * [Angular framework v11](https://angular.io/)
 * [@angular/forms](https://angular.io/api/forms) used with [PatternValidator](https://angular.io/api/forms/PatternValidator)
+* [Reactive Extensions Library for Javascript rxjs v6](https://rxjs.dev/)
 * [Webpack v5](https://webpack.js.org/) static module bundler for modern JavaScript applications.
 * [Tailwindcss v2](https://tailwindcss.com/) CSS framework
 * [postcss-loader v4](https://www.npmjs.com/package/postcss-loader) Loader to process CSS with PostCSS. Transformations that are applied to the source code of a module, to pre-process files as you import or “load” them.
@@ -58,7 +67,7 @@
 
 ## :computer: Code Examples
 
-* extract from `home.ts` - error card that appears
+* extract from `home.ts` - div that is only shown if API dataset is empty
 
 ```typescript
   <!--Show if no data from API - some postcodes have no RATP commerce-->
@@ -78,8 +87,8 @@
 
 ## :clipboard: Status & To-Do List
 
-* Status: In work. All files pass linting. App passes unit tests. e2e testing not set up so doesn't pass. Build file is a compact xxxkb thanks to Tailwind’s purge option (manually enabled in `tailwind.config.js`) that tree-shakes unused styles and optimizes the final build size.
-* To-Do: pwa, add test, e2e test, translations,
+* Status: Working. All files pass linting. App passes unit tests. e2e testing not set up so doesn't pass. Build file is a compact xxxkb thanks to Tailwind’s purge option (manually enabled in `tailwind.config.js`) that tree-shakes unused styles and optimizes the final build size.
+* To-Do: optimize, pwa, add spinner, test, e2e test, translations, build with purgecss, deploy with Github pages
 
 ## :clap: Inspiration
 
@@ -88,6 +97,7 @@
 * [Trungk18.com: How to configure TailwindCSS with Angular and why you should use it](https://trungk18.com/experience/configure-tailwind-css-with-angular/)
 * [Angular Architects: article: Extending the Angular CLI’s build process without ejecting](https://www.angulararchitects.io/aktuelles/extending-the-angular-clis-build-process/)
 * [List of French postal codes](http://www.bioreference.net/encyclopedia/wikipedia/l/li/list_of_french_postal_codes.html)
+* [RATP API doc: Commerces de proximité agréés RATP](https://dataratp2.opendatasoft.com/explore/dataset/liste-des-commerces-de-proximite-agrees-ratp/api/?sort=code_postal)
 
 ## :envelope: Contact
 

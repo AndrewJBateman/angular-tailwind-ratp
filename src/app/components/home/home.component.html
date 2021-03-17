@@ -5,159 +5,161 @@
   />
 </head>
 
-<div class="bg-white pb-4 px-4 pt-5 rounded-md w-full">
-  <!--search bar-->
-  <form
-    #postCodeSearch="ngForm"
-    method="POST"
-    (ngSubmit)="submitForm(postCodeSearch); postCodeSearch.reset()"
-  >
-    <div class="input-group mb-0">
-      <div class="max-w-xs relative text-lg bg-transparent text-gray-800">
-        <div
-          class="search-bar rounded-lg flex items-center border-b border-b-3 border-teal-500 py-2"
-        >
-          <input
-            id="search"
-            name="search"
-            #name="ngModel"
-            class="form-control bg-transparent border-none mr-3 px-2 leading-tight focus:outline-none"
-            required
-            ngModel
-            type="text"
-            placeholder="tapez le code postal"
-            aria-label="Enter postcode"
-            minlength="5"
-            maxlength="5"
-            pattern="[0-9]*"
-          />
-          <button
-            type="submit"
-            [disabled]="postCodeSearch.invalid"
-            class="absolute right-0 top-0 mt-3 mr-4"
+<div class="min-w-screen min-h-screen ratp-green">
+  <div class="pb-4 px-4 pt-5 rounded-md w-full">
+    <!--search bar-->
+    <form
+      #postCodeSearch="ngForm"
+      method="POST"
+      (ngSubmit)="submitForm(postCodeSearch); postCodeSearch.reset()"
+      background-color: #fff;
+    >
+      <div class="input-group mb-1 rounded-lg">
+        <div class="max-w-xs relative text-lg rounded-lg bg-white text-gray-800">
+          <div
+            class="search-bar rounded-lg flex items-center border-b border-b-3 border-teal-500 py-2"
           >
-            <svg
-              class="h-4 w-4 fill-current"
-              xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink"
-              version="1.1"
-              id="Capa_1"
-              x="0px"
-              y="0px"
-              viewBox="0 0 56.966 56.966"
-              style="enable-background: new 0 0 56.966 56.966"
-              xml:space="preserve"
-              width="512px"
-              height="512px"
+            <input
+              id="search"
+              name="search"
+              #name="ngModel"
+              class="form-control border-none mr-3 px-2 leading-tight focus:outline-none"
+              required
+              ngModel
+              type="text"
+              placeholder="tapez le code postal"
+              aria-label="Enter postcode"
+              minlength="5"
+              maxlength="5"
+              pattern="[0-9]*"
+            />
+            <button
+              type="submit"
+              [disabled]="postCodeSearch.invalid"
+              class="absolute right-0 top-0 mt-3 mr-4"
             >
-              <path
-                d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23  s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92  c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17  s-17-7.626-17-17S14.61,6,23.984,6z"
-              />
-            </svg>
-          </button>
+              <svg
+                class="h-4 w-4 fill-current"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                version="1.1"
+                id="Capa_1"
+                x="0px"
+                y="0px"
+                viewBox="0 0 56.966 56.966"
+                style="enable-background: new 0 0 56.966 56.966"
+                xml:space="preserve"
+                width="512px"
+                height="512px"
+              >
+                <path
+                  d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23  s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92  c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17  s-17-7.626-17-17S14.61,6,23.984,6z"
+                />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
-    </div>
-  </form>
-  <!--error-checking-->
-  <div class="max-w-xs pt-2">
-    <div class="info-card bg-white shadow-xl rounded-lg">
-      <div class="p-1">
-        <div
-          *ngIf="name.invalid && (name.dirty || name.touched)"
-          class="alert-danger"
-        >
+    </form>
+    <!--error-checking-->
+    <div class="max-w-xs pt-2" *ngIf="name.invalid && (name.dirty || name.touched)">
+      <div class="info-card bg-white shadow-xl rounded-lg">
+        <div class="p-1">
           <div
-            *ngIf="
-              name.errors.required ||
-              name.errors.minlength ||
-              name.errors.pattern
-            "
+            class="alert-danger"
           >
-            Un code postal de 5 chiffres est requis
+            <div
+              *ngIf="
+                name.errors.required ||
+                name.errors.minlength ||
+                name.errors.pattern
+              "
+            >
+              Un code postal de 5 chiffres est requis
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <!--Show if no data from API - some postcodes have no RATP commerce-->
-  <div class="max-w-xs" *ngIf="!dataToShow && !initialState">
-    <div class="alert-danger bg-white shadow-xl rounded-lg">
-      <div class="p-1">
-        <p>Aucune RATP donnée à afficher - essayez un autre code postal</p>
-      </div>
-    </div>
-  </div>
-
-  <div *ngIf="dataToShow">
-    <!--summary panel-->
-    <div class="max-w-xs">
-      <div class="info-card bg-white shadow-xl rounded-lg">
+    <!--Show if no data from API - some postcodes have no RATP commerce-->
+    <div class="max-w-xs" *ngIf="!dataToShow && !initialState">
+      <div class="alert-danger bg-white shadow-xl rounded-lg">
         <div class="p-1">
-          <table class="text-xs my-2">
-            <tbody>
-              <tr>
-                <td class="px-2 text-gray-500 font-semibold">
-                  <span class="text-gray-900 font-bold"
-                    >Code Postal Recherché:</span
-                  >
-                </td>
-                <td class="px-2">{{ postalCode }}</td>
-              </tr>
-              <tr>
-                <td class="px-2 text-gray-500 font-semibold">
-                  <span class="text-gray-900 font-bold">Ville:</span>
-                </td>
-                <td class="px-2">{{ ville }}</td>
-              </tr>
-              <tr>
-                <td class="px-2 text-gray-500 font-semibold">
-                  <span class="text-gray-900 font-bold">Nombre d'Eléments</span>
-                </td>
-                <td class="px-2">{{ dataLength }}</td>
-              </tr>
-              <tr>
-                <td class="px-2 text-gray-500 font-semibold">
-                  <span class="text-gray-900 font-bold">Mise à Jour</span>
-                </td>
-                <td class="px-2">{{ date | date }}</td>
-              </tr>
-            </tbody>
-          </table>
+          <p>Aucune RATP donnée à afficher - essayez un autre code postal</p>
         </div>
       </div>
     </div>
 
-    <!--API data table-->
-    <div class="overflow-x-auto mt-6" *ngIf="dataToShow">
-      <table class="table-auto border-collapse w-full">
-        <thead>
-          <tr class="rounded-lg text-gray-900 font-bold text-left">
-            <th class="column-header p-2">Nom</th>
-            <th class="column-header p-2">Adresse</th>
-            <th class="column-header p-2">Jours Ferme</th>
-          </tr>
-        </thead>
-        <tbody class="text-sm font-normal text-gray-700">
-          <tr
-            *ngFor="let data of ratpData"
-            class="hover:bg-gray-100 border-b border-gray-200 py-10"
-          >
-            <td class="p-2">{{ data.fields.tco_libelle }}</td>
-            <td class="p-2">
-              {{ data?.fields?.dea_numero_rue_livraison_dea_rue_livraison }}
-            </td>
-            <td *ngIf="data.fields.dea_fermeture" class="p-2">
-              {{ data.fields.dea_fermeture }}
-            </td>
-            <td *ngIf="!data.fields.dea_fermeture" class="p-2">
-              Pas de Données
-            </td>
-          </tr>
-          <tr class="hover:bg-gray-100 border-b border-gray-200 py-2"></tr>
-        </tbody>
-      </table>
+    <div *ngIf="dataToShow">
+      <!--summary panel-->
+      <div class="max-w-xs rounded">
+        <div class="info-card bg-white shadow-xl rounded-lg">
+          <div class="p-1">
+            <table class="text-xs my-2 rounded">
+              <tbody class="rounded">
+                <tr>
+                  <td class="px-2 rounded">
+                    <span class="text-gray-900 font-bold"
+                      >Code Postal Recherché:</span
+                    >
+                  </td>
+                  <td class="px-2 text-gray-600 text-xs">{{ postalCode }}</td>
+                </tr>
+                <tr>
+                  <td class="px-2">
+                    <span class="text-gray-900 font-bold">Ville:</span>
+                  </td>
+                  <td class="px-2 text-gray-600 text-xs">{{ ville }}</td>
+                </tr>
+                <tr>
+                  <td class="px-2">
+                    <span class="text-gray-900 font-bold">Nombre d'Eléments</span>
+                  </td>
+                  <td class="px-2 text-gray-600 text-xs">{{ dataLength }}</td>
+                </tr>
+                <tr>
+                  <td class="px-2">
+                    <span class="text-gray-900 font-bold">Mise à Jour</span>
+                  </td>
+                  <td class="px-2 text-gray-600 text-xs">{{ date | date }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!--API data table-->
+      <div class="overflow-x-auto shadow mt-6" *ngIf="dataToShow">
+        <table class="table-auto border-collapse w-full rounded-lg">
+          <thead>
+            <tr class="rounded-lg text-white font-bold text-left">
+              <th class="column-header p-2 ">Nom</th>
+              <th class="column-header p-2">Adresse</th>
+              <th class="column-header p-2">Ferme</th>
+            </tr>
+          </thead>
+          <tbody class="text-sm font-normal text-gray-700">
+            <tr
+              *ngFor="let data of ratpData; trackBy: trackByFn"
+              class="hover:bg-white border-b border-gray-200 py-10"
+            >
+              <td class="p-2">{{ data.fields.tco_libelle }}</td>
+              <td class="p-2">
+                {{ data?.fields?.dea_numero_rue_livraison_dea_rue_livraison }}
+              </td>
+              <td *ngIf="data.fields.dea_fermeture" class="p-2">
+                {{ data.fields.dea_fermeture }}
+              </td>
+              <td *ngIf="!data.fields.dea_fermeture" class="p-2">
+                Pas de Données
+              </td>
+            </tr>
+            <tr class="hover:bg-gray-100 border-b border-gray-200 py-2"></tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </div>

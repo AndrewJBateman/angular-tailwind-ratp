@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { throwError, Observable } from 'rxjs';
-import { map, catchError } from 'rxjs/operators';
+import { catchError, take } from 'rxjs/operators';
 
 import { RatpResponse } from '../models/ratp';
 
@@ -16,7 +16,7 @@ export class RatpService {
   getRatpData(query: string): Observable<RatpResponse> {
     const userSearchUrl = `${baseUrl}dataset=liste-des-commerces-de-proximite-agrees-ratp&q=${query}&rows=1052&sort=-code_postal&facet=tco_libelle&facet=code_postal`;
     return this.http.get<RatpResponse>(userSearchUrl).pipe(
-      map((data: RatpResponse) => data),
+      take(1),
       catchError((err) => {
         return throwError(
           'There was a problem fetching data from the RATP API, error: ',

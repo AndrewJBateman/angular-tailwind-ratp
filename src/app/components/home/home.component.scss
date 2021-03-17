@@ -1,5 +1,13 @@
-.search-bar, .column-header {
-  background-color: rgb(245, 243, 243);
+.search-bar, .column-header, .info-card {
+  background-color: white;
+}
+
+td {
+  background-color: white;
+}
+
+.column-header {
+  background-color: #2f4e96;
 }
 
 .alert-danger {

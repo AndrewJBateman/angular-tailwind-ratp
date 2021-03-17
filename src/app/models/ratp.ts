@@ -7,15 +7,15 @@ export interface RatpResponse {
 }
 
 export interface Facet_Group {
-  facet: Facet[];
+  facets: Facet[];
   name: string;
 }
 
 export interface Facet {
   count: number;
+  name?: string;
   path: string;
   state: string;
-  displayed: string;
 }
 
 export interface Parameter {
@@ -35,13 +35,14 @@ export interface Parameter {
 }
 
 export interface Record {
-  field: {
+  datasetid: string;
+  fields: {
     code_postal: number;
-    dea_fermeture: string;
+    dea_fermeture?: string;
     dea_numero_rue_livraison_dea_rue_livraison: string;
     tco_libelle: string;
     ville: string;
-    record_timestamp: string;
-    recordid: string
   }
+  record_timestamp: string;
+  recordid: string
 }

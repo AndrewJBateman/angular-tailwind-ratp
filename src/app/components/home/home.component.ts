@@ -3,6 +3,7 @@ import { NgForm } from "@angular/forms";
 
 import { environment } from '../../../environments/environment';
 import { RatpService } from '../../services/ratp.service';
+import { RatpResponse, Record } from '../../models/ratp';
 
 @Component({
   selector: 'app-home',
@@ -19,8 +20,8 @@ export class HomeComponent implements OnInit {
   displayCleared = false;
 
   // API data variables
-  ratpData: any;
-  postalCode: string;
+  ratpData: Record[];
+  postalCode: number;
   ville: string;
   dataLength: number;
   date: string;
@@ -35,7 +36,7 @@ export class HomeComponent implements OnInit {
   }
 
   onSearchData(postCode: string): void {
-    this.ratpService.getRatpData(postCode).subscribe((data: any) => {
+    this.ratpService.getRatpData(postCode).subscribe((data: RatpResponse) => {
       this.ratpData = data.records;
       if (this.ratpData.length > 0) {
         this.initialState = false;
@@ -48,6 +49,10 @@ export class HomeComponent implements OnInit {
         this.dataToShow = false;
       }
     });
+  }
+
+  trackByFn(index: number, data: any): number {
+    return data;
   }
 
   clearSearch() {

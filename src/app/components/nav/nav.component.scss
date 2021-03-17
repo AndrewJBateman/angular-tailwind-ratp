@@ -1,11 +1,7 @@
 nav {
-  border-bottom: 1px solid #178d79;
+  border-bottom: 4px solid #2f4e96;
   background: white;
   height: 4rem;
-
-  .nav-heading {
-    color: #178d79;
-  }
 
   .nav-left-icon {
     height: 50px;
@@ -17,7 +13,7 @@ nav {
   }
 
   .nav-link-active {
-    color: #1d6ac2 !important;
+    color: #2f4e96 !important;
     font-weight: bold;
   }
 }
