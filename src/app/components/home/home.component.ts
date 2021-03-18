@@ -38,8 +38,9 @@ export class HomeComponent implements OnInit {
   onSearchData(postCode: string): void {
     this.ratpService.getRatpData(postCode).subscribe((data: RatpResponse) => {
       this.ratpData = data.records;
+      this.initialState = false;
+      console.log("this.data: ", this.ratpData);
       if (this.ratpData.length > 0) {
-        this.initialState = false;
         this.dataToShow = true;
         this.postalCode = this.ratpData[0].fields.code_postal;
         this.ville = this.ratpData[0].fields.ville;
