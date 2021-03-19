@@ -6,25 +6,25 @@
 </head>
 
 <div class="min-w-screen min-h-screen ratp-green">
-  <div class="pb-4 px-4 pt-5 rounded-md w-full">
+  <div class="py-4 px-4 w-full">
     <!--search bar-->
     <form
       #postCodeSearch="ngForm"
       method="POST"
       (ngSubmit)="submitForm(postCodeSearch); postCodeSearch.reset()"
       background-color:
-      #fff;
+      #f5f3f3;
     >
-      <div class="input-group mb-2 rounded-lg">
+      <div class="input-group mb-2 rounded-lg mr-0">
         <div
-          class="max-w-xs relative text-lg rounded-lg bg-white text-gray-800"
+          class="max-w-xs relative text-lg rounded-lg bg-white text-gray-800 mr-0"
         >
-          <div class="search-bar rounded-lg bg-white py-2">
+          <div class="search-bar rounded-lg py-2">
             <input
               id="search"
               name="search"
               #name="ngModel"
-              class="form-control border-none pl-2 leading-tight bg-white focus: outline-none"
+              class="input-form form-control border-none pl-2 leading-tight focus: outline-none"
               required
               ngModel
               type="text"
@@ -33,15 +33,16 @@
               minlength="5"
               maxlength="5"
               pattern="[0-9]*"
+
             />
             <button
               type="submit"
               [disabled]="postCodeSearch.invalid"
-              class="absolute right-0 top-0 mt-4 mr-4"
+              class="absolute right-0 top-0 mt-3 mr-4"
             >
               <img
                 class="h-5 w-5 fill-current"
-                src="./../../../assets/glass.svg"
+                src="./../../../assets/search.svg"
               />
             </button>
           </div>
@@ -53,15 +54,11 @@
       class="max-w-xs pt-2"
       *ngIf="name.invalid && (name.dirty || name.touched)"
     >
-      <div class="info-card bg-white shadow-xl rounded-lg">
+      <div class="info-card shadow-xl rounded-lg">
         <div class="p-1 pl-2">
           <div class="text-red-600 font-bold">
             <div
-              *ngIf="
-                name.errors.required ||
-                name.errors.minlength ||
-                name.errors.pattern
-              "
+              *ngIf="name.errors"
             >
               Un code postal de 5 chiffres est requis
             </div>
@@ -82,37 +79,33 @@
     <div *ngIf="dataToShow">
       <!--summary panel-->
       <div class="max-w-xs rounded">
-        <div class="info-card bg-white shadow-xl rounded-lg">
+        <div class="info-card">
           <div class="p-1">
-            <table class="text-xs my-2 rounded">
-              <tbody class="rounded">
+            <table class="text-xs my-2">
+              <tbody>
                 <tr>
-                  <td class="px-2 rounded">
-                    <span class="text-gray-900 font-bold"
-                      >Code Postal Recherché:</span
-                    >
+                  <td class="table-cell">
+                    <span class="table-text-left">Code Postal Recherché:</span>
                   </td>
-                  <td class="px-2 text-gray-600 text-xs">{{ postalCode }}</td>
+                  <td class="table-text-right">{{ postalCode }}</td>
                 </tr>
                 <tr>
-                  <td class="px-2">
-                    <span class="text-gray-900 font-bold">Ville:</span>
+                  <td class="table-cell">
+                    <span class="table-text-left">Ville:</span>
                   </td>
-                  <td class="px-2 text-gray-600 text-xs">{{ ville }}</td>
+                  <td class="table-text-right">{{ ville }}</td>
                 </tr>
                 <tr>
-                  <td class="px-2">
-                    <span class="text-gray-900 font-bold"
-                      >Nombre d'Eléments</span
-                    >
+                  <td class="table-cell">
+                    <span class="table-text-left">Nombre d'Eléments</span>
                   </td>
-                  <td class="px-2 text-gray-600 text-xs">{{ dataLength }}</td>
+                  <td class="table-text-right">{{ dataLength }}</td>
                 </tr>
                 <tr>
-                  <td class="px-2">
-                    <span class="text-gray-900 font-bold">Mise à Jour</span>
+                  <td class="table-cell">
+                    <span class="table-text-left">Mise à Jour</span>
                   </td>
-                  <td class="px-2 text-gray-600 text-xs">{{ date | date }}</td>
+                  <td class="table-text-right">{{ date | date }}</td>
                 </tr>
               </tbody>
             </table>
@@ -125,42 +118,32 @@
         <table class="table-auto border-collapse w-full rounded-lg">
           <thead>
             <tr class="rounded-lg text-white font-bold text-left">
-              <th class="column-header p-2">Nom</th>
-              <th class="column-header p-2">Adresse</th>
-              <th class="column-header p-2">Ferme</th>
+              <th class="column-header">Nom</th>
+              <th class="column-header">Adresse</th>
+              <th class="column-header">Ferme</th>
             </tr>
           </thead>
-          <tbody class="text-sm font-normal text-gray-700">
+          <tbody class="text-sm font-normal text-gray-700 bg-white">
             <tr
               *ngFor="let data of ratpData; trackBy: trackByFn"
-              class="hover:bg-white border-b border-gray-200 py-10"
+              class="border-b border-gray-200 py-10"
             >
-              <td class="p-2">{{ data.fields.tco_libelle }}</td>
-              <td class="p-2">
+              <td class="table-cell">{{ data.fields.tco_libelle }}</td>
+              <td class="table-cell">
                 {{ data?.fields?.dea_numero_rue_livraison_dea_rue_livraison }}
               </td>
-              <td *ngIf="data.fields.dea_fermeture" class="p-2">
+              <td class="table-cell" *ngIf="data.fields.dea_fermeture else noData">
                 {{ data.fields.dea_fermeture }}
               </td>
-              <td *ngIf="!data.fields.dea_fermeture" class="p-2">
-                Pas de Données
-              </td>
+              <ng-template #noData>
+                <td class="table-cell">
+                  Pas de Données
+                </td>
+              </ng-template>
             </tr>
-            <tr class="hover:bg-gray-100 border-b border-gray-200 py-2"></tr>
           </tbody>
         </table>
       </div>
     </div>
-    <!-- <ng-template #noResults>
-      <div class="max-w-xs" *ngIf="!dataToShow && !initialState">
-        <div class="text-red-600 font-bold bg-white shadow-xl rounded-lg">
-          <div class="p-1">
-            <p>
-              Aucune RATP donnée à afficher - essayez un code postal valide
-            </p>
-          </div>
-        </div>
-      </div>
-    </ng-template> -->
   </div>
 </div>

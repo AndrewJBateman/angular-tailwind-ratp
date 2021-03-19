@@ -4,6 +4,7 @@ import { NgForm } from "@angular/forms";
 import { environment } from '../../../environments/environment';
 import { RatpService } from '../../services/ratp.service';
 import { RatpResponse, Record } from '../../models/ratp';
+import { Observable } from "rxjs";
 
 @Component({
   selector: 'app-home',
@@ -12,7 +13,6 @@ import { RatpResponse, Record } from '../../models/ratp';
 })
 export class HomeComponent implements OnInit {
   name = environment.application.name;
-  form: NgForm;
 
   // status variables
   initialState = true;
@@ -20,26 +20,25 @@ export class HomeComponent implements OnInit {
   displayCleared = false;
 
   // API data variables
-  ratpData: Record[];
-  postalCode: number;
-  ville: string;
-  dataLength: number;
-  date: string;
+  ratpData: Record[] = [];
+  postalCode: number = 0;
+  ville: string = "";
+  dataLength: number = 0;
+  date: string = "";
 
   constructor(private ratpService: RatpService) {}
 
   ngOnInit(): void {
   }
 
-  submitForm(postCodeSearch: any) {
+  submitForm(postCodeSearch: NgForm) {
     this.onSearchData(postCodeSearch.value.search);
   }
 
   onSearchData(postCode: string): void {
-    this.ratpService.getRatpData(postCode).subscribe((data: RatpResponse) => {
+    this.ratpService.getRatpData(postCode).subscribe((data: any) => {
       this.ratpData = data.records;
       this.initialState = false;
-      console.log("this.data: ", this.ratpData);
       if (this.ratpData.length > 0) {
         this.dataToShow = true;
         this.postalCode = this.ratpData[0].fields.code_postal;

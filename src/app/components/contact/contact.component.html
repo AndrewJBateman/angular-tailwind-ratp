@@ -5,7 +5,7 @@
 <div class="min-w-screen min-h-screen ratp-green">
   <div class="flex mx-auto pt-10 h-screen w-full justify-center" *ngIf="user">
     <div class="max-w-xs">
-      <div class="info-card bg-white shadow-xl rounded-lg">
+      <div class="info-card shadow-xl">
         <div class="photo-wrapper px-2 pt-5">
           <img
             class="w-40 h-40 rounded-full mx-auto"
@@ -20,9 +20,11 @@
             <span class="text-xs text-gray-600 italic">App par</span>
             {{ user.name }}
           </h3>
-          <div class="px-2 text-center text-gray-600 text-xs font-semibold">
+          <div class="table-text-left text-center">
             <p class="pb-1 px-2 text-gray-600 text-xs">
-              <span class="text-gray-900 font-bold">{{ userBio | slice: 0 : 42 }} </span>
+              <span class="text-gray-900 font-bold"
+                >{{ userBio | slice: 0:42 }}
+              </span>
               {{ userBio | slice: 42 }}
             </p>
           </div>
@@ -32,7 +34,9 @@
                 <td class="px-2">
                   <span class="text-gray-900 font-bold">Github Repos:</span>
                 </td>
-                <td class="px-2 text-gray-600 text-xs">{{ user.public_repos }}</td>
+                <td class="px-2 text-gray-600 text-xs">
+                  {{ user.public_repos }}
+                </td>
               </tr>
               <tr>
                 <td class="px-2">
@@ -44,7 +48,9 @@
                 <td class="px-2">
                   <span class="text-gray-900 font-bold">Mis à Jour</span>
                 </td>
-                <td class="px-2 text-gray-600 text-xs">{{ user.updated_at | date }}</td>
+                <td class="px-2 text-gray-600 text-xs">
+                  {{ user.updated_at | date }}
+                </td>
               </tr>
             </tbody>
           </table>
@@ -58,12 +64,12 @@
               >Voir mon profil Github</a
             >
             <a
-            class="text-xs text-indigo-600 italic hover:underline hover:text-indigo-800 font-medium"
-            href="https://andrewbateman.org/contact"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Envoyer un message</a
-          >
+              class="text-xs text-indigo-600 italic hover:underline hover:text-indigo-800 font-medium"
+              href="https://andrewbateman.org/contact"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Envoyer un message</a
+            >
           </div>
         </div>
       </div>

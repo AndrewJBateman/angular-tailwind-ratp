@@ -48,17 +48,14 @@
 * [Angular framework v11](https://angular.io/)
 * [@angular/forms](https://angular.io/api/forms) used with [PatternValidator](https://angular.io/api/forms/PatternValidator)
 * [Reactive Extensions Library for Javascript rxjs v6](https://rxjs.dev/)
-* [Webpack v5](https://webpack.js.org/) static module bundler for modern JavaScript applications.
 * [Tailwindcss v2](https://tailwindcss.com/) CSS framework
-* [postcss-loader v4](https://www.npmjs.com/package/postcss-loader) Loader to process CSS with PostCSS. Transformations that are applied to the source code of a module, to pre-process files as you import or “load” them.
-* [postcss-scss v3](https://www.npmjs.com/package/postcss-scss) SCSS parser for PostCSS.
-* [ngx-build-plus](https://www.npmjs.com/package/ngx-build-plus) to extend the Angular CLI's default build behavior. Allows a partial custom webpack config to be merged with the CLI's one.
 
 ## :floppy_disk: Setup
 
 * Run `npm i` to install dependencies.
 * Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-* Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+* Run `ng build` to build the project without css purging. The build artifacts will be stored in the `dist/` directory.
+* Run `ng build --configuration production` for a production build with css purging.
 
 ## :wrench: Testing
 
@@ -84,6 +81,7 @@
 
 * The RATP & Github APIs do not require an API key
 * Postcode search form with error messages checks that only a 5-number postcode is entered
+* Tailwind purge results in a very small styles build bundle
 
 ## :clipboard: Status & To-Do List
 
@@ -92,12 +90,11 @@
 
 ## :clap: Inspiration
 
-* [Angular 11 and Tailwind; Let's go!](https://www.youtube.com/watch?v=ul8UvsBWM3Y)
-* [Tailwindcss docs: Optimizing for Production](https://tailwindcss.com/docs/optimizing-for-production#setting-up-purgecss)
-* [Trungk18.com: How to configure TailwindCSS with Angular and why you should use it](https://trungk18.com/experience/configure-tailwind-css-with-angular/)
 * [Angular Architects: article: Extending the Angular CLI’s build process without ejecting](https://www.angulararchitects.io/aktuelles/extending-the-angular-clis-build-process/)
 * [List of French postal codes](http://www.bioreference.net/encyclopedia/wikipedia/l/li/list_of_french_postal_codes.html)
 * [RATP API doc: Commerces de proximité agréés RATP](https://dataratp2.opendatasoft.com/explore/dataset/liste-des-commerces-de-proximite-agrees-ratp/api/?sort=code_postal)
+* [StackOverflow: How to solve semi-colon expected css(css-semicolonexpected)](https://stackoverflow.com/questions/61443484/how-to-solve-semi-colon-expected-csscss-semicolonexpected)
+* [dev.to: Setup TailwindCSS in Angular the easy way](https://dev.to/angular/setup-tailwindcss-in-angular-the-easy-way-1i5l)
 
 ## :envelope: Contact
 

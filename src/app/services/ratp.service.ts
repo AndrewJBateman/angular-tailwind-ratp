@@ -11,11 +11,13 @@ const baseUrl = 'https://data.ratp.fr/api/records/1.0/search/?';
   providedIn: 'root',
 })
 export class RatpService {
+  private ratpResponseData: Observable<RatpResponse>;
+
   constructor(private http: HttpClient) {}
 
   getRatpData(query: string): Observable<RatpResponse> {
     const userSearchUrl = `${baseUrl}dataset=liste-des-commerces-de-proximite-agrees-ratp&q=${query}&rows=1052&sort=-code_postal&facet=tco_libelle&facet=code_postal`;
-    return this.http.get<RatpResponse>(userSearchUrl).pipe(
+    this.ratpResponseData = this.http.get<RatpResponse>(userSearchUrl).pipe(
       take(1),
       catchError((err) => {
         return throwError(
@@ -24,5 +26,6 @@ export class RatpService {
         );
       })
     );
+    return this.ratpResponseData;
   }
 }

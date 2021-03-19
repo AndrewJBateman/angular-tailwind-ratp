@@ -1,0 +1,8 @@
+{
+  "scss.completion.completePropertyWithSemicolon": false,
+  "prettier.semi": false,
+  "css.completion.completePropertyWithSemicolon": false,
+  "less.lint.unknownAtRules": "ignore",
+  "scss.lint.unknownAtRules": "ignore",
+  "css.validate": false
+}

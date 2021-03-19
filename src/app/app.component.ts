@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-tailwind-ratp';
-  version = 'Angular version 11.0.5';
+  version = 'Angular version 12';
 }
