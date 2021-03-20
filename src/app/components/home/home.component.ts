@@ -8,8 +8,7 @@ import { Observable } from "rxjs";
 
 @Component({
   selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss'],
+  templateUrl: './home.component.html'
 })
 export class HomeComponent implements OnInit {
   name = environment.application.name;
@@ -36,7 +35,7 @@ export class HomeComponent implements OnInit {
   }
 
   onSearchData(postCode: string): void {
-    this.ratpService.getRatpData(postCode).subscribe((data: any) => {
+    this.ratpService.getRatpData(postCode).subscribe((data: RatpResponse) => {
       this.ratpData = data.records;
       this.initialState = false;
       if (this.ratpData.length > 0) {

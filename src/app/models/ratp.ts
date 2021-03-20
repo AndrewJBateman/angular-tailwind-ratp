@@ -3,7 +3,7 @@ export interface RatpResponse {
   facet_groups: Facet_Group[];
   nhits: number;
   parameters: Parameter[];
-  records?: Record[];
+  records: Record[];
 }
 
 export interface Facet_Group {

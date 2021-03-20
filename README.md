@@ -30,10 +30,7 @@
 * [Tailwind Responsive Table](https://tailwindcomponents.com/component/responsive-table-1) used to show RATP data
 * About and Contact pages give more information on app using Tailwind css cards
 * Website is in French
-* Webpack explained in [Webpack documentation Concepts](https://webpack.js.org/concepts/)
 * To build for production Tailwind’s purge option is used to tree-shake unused styles and optimize final build size.
-* `angular.json` file modified to use custom builder and `webpack.config.js` file
-* **important** npm postcss-loader [must be v4.2.0 and not latest version - ref. Stackoverflow](https://stackoverflow.com/questions/66082397/typeerror-this-getoptions-is-not-a-function) or there will be lots of errors and no dev server
 * [rxjs take(1) operater](https://advancedweb.hu/rxjs-the-differences-between-first-take-1-and-single/) used to take first element from the Ratp & Github observable streams then close them, so unsubscribing is not necessary.
 
 ## :camera: Screenshots
@@ -54,8 +51,9 @@
 
 * Run `npm i` to install dependencies.
 * Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-* Run `ng build` to build the project without css purging. The build artifacts will be stored in the `dist/` directory.
+* Run `ng build` to build the project without css purging.
 * Run `ng build --configuration production` for a production build with css purging.
+* The build artifacts will be stored in the `dist/` directory.
 
 ## :wrench: Testing
 
@@ -64,29 +62,36 @@
 
 ## :computer: Code Examples
 
-* extract from `home.ts` - div that is only shown if API dataset is empty
+* `ratp.service.ts` - function to fetch Ratp API data based on a postcode string input
 
 ```typescript
-  <!--Show if no data from API - some postcodes have no RATP commerce-->
-  <div class="max-w-xs" *ngIf="!dataToShow && !initialState">
-    <div class="info-card bg-white shadow-xl rounded-lg">
-      <div class="p-1">
-        <p>Aucune RATP donnée à afficher - essayez un autre code postal</p>
-      </div>
-    </div>
-  </div>
+getRatpData(query: string): Observable<RatpResponse> {
+    const userSearchUrl = `${baseUrl}dataset=liste-des-commerces-de-proximite-agrees-ratp&q=${query}&rows=1052&sort=-code_postal&facet=tco_libelle&facet=code_postal`;
+    this.ratpResponseData = this.http.get<RatpResponse>(userSearchUrl).pipe(
+      take(1),
+      catchError((err) => {
+        return throwError(
+          'There was a problem fetching data from the RATP API, error: ',
+          err
+        );
+      })
+    );
+    return this.ratpResponseData;
+  }
 ```
 
 ## :cool: Features
 
 * The RATP & Github APIs do not require an API key
+* Lazy-loading of about and contact pages
 * Postcode search form with error messages checks that only a 5-number postcode is entered
-* Tailwind purge results in a very small styles build bundle
+* Tailwind build for production css purge results in a very small styles bundle
 
 ## :clipboard: Status & To-Do List
 
 * Status: Working. All files pass linting. App passes unit tests. e2e testing not set up so doesn't pass. Build file is a compact xxxkb thanks to Tailwind’s purge option (manually enabled in `tailwind.config.js`) that tree-shakes unused styles and optimizes the final build size.
-* To-Do: optimize, pwa, add spinner, test, e2e test, translations, build with purgecss, deploy with Github pages
+* To-Do: optimize, deploy with Github pages, pwa, add spinner, test, e2e test, translations
+* To-Do: create angular-tailwind-pwa template for separate repo
 
 ## :clap: Inspiration
 
