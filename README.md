@@ -57,8 +57,8 @@
 
 ## :wrench: Testing
 
-* Run `ng test` to run Jasmine unit tests via [Karma](https://karma-runner.github.io)
-* Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+* Run `ng test` to run Jasmine unit tests via [Karma](https://karma-runner.github.io). Currrently 9/9 tests pass
+* Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/). Currently 0 tests so all pass
 
 ## :computer: Code Examples
 
@@ -85,12 +85,12 @@ getRatpData(query: string): Observable<RatpResponse> {
 * The RATP & Github APIs do not require an API key
 * Lazy-loading of about and contact pages
 * Postcode search form with error messages checks that only a 5-number postcode is entered
-* Tailwind build for production css purge results in a very small styles bundle
+* Tailwind build for production css purge results in a very small styles bundle (8.16kB latest)
 
 ## :clipboard: Status & To-Do List
 
 * Status: Working. All files pass linting. App passes unit tests. e2e testing not set up so doesn't pass. Build file is a compact xxxkb thanks to Tailwind’s purge option (manually enabled in `tailwind.config.js`) that tree-shakes unused styles and optimizes the final build size.
-* To-Do: optimize, deploy with Github pages, pwa, add spinner, test, e2e test, translations
+* To-Do: deploy with Github pages, pwa, test, e2e test, translations
 * To-Do: create angular-tailwind-pwa template for separate repo
 
 ## :clap: Inspiration

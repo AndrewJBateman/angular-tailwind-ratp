@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from "@angular/forms";
 
 import { environment } from '../../../environments/environment';
@@ -11,6 +11,8 @@ import { Observable } from "rxjs";
   templateUrl: './home.component.html'
 })
 export class HomeComponent implements OnInit {
+  @ViewChild("form") form: NgForm;
+  formSubmitted = false;
   name = environment.application.name;
 
   // status variables
@@ -30,8 +32,9 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  submitForm(postCodeSearch: NgForm) {
+  onSubmitForm(postCodeSearch: NgForm) {
     this.onSearchData(postCodeSearch.value.search);
+    this.formSubmitted = true;
   }
 
   onSearchData(postCode: string): void {
@@ -56,5 +59,6 @@ export class HomeComponent implements OnInit {
 
   clearSearch() {
     this.displayCleared = true;
+    this.formSubmitted = false;
   }
 }
