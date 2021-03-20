@@ -35,10 +35,9 @@
 
 ## :camera: Screenshots
 
-![Example screenshot](./img/ratp.jpg)
+![Example screenshot](./img/home.jpg)
 ![Example screenshot](./img/about.jpg)
 ![Example screenshot](./img/contact.jpg)
-![Example screenshot](./img/notfound.jpg)
 
 ## :signal_strength: Technologies
 
@@ -86,13 +85,15 @@ getRatpData(query: string): Observable<RatpResponse> {
 
 * The RATP & Github APIs do not require an API key
 * Lazy-loading of about and contact pages
-* Postcode search form with error messages checks that only a 5-number postcode is entered
+* Postcode search form with validation and error messages checks that only a 5-number postcode is entered
 * Tailwind build for production css purge results in a very small styles bundle (8.16kB latest)
+* Progressive Web App (PWA)
+* Perfect Google Chrome Lighthouse 100% score
 
 ## :clipboard: Status & To-Do List
 
-* Status: Working. All files pass linting. App passes unit tests. e2e testing not set up so doesn't pass. Build file is a compact xxxkb thanks to Tailwind’s purge option (manually enabled in `tailwind.config.js`) that tree-shakes unused styles and optimizes the final build size.
-* To-Do: deploy with Github pages, pwa, test, e2e test, translations
+* Status: Working, deployed to Netlify. All files pass linting. App passes unit tests. e2e testing not set up so doesn't pass.
+* To-Do: add tests, language translations
 * To-Do: create angular-tailwind-pwa template for separate repo
 
 ## :clap: Inspiration
