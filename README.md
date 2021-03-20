@@ -1,6 +1,6 @@
 # :zap: Angular Tailwind RATP
 
-* Angular 11 app using [Webpack v5](https://webpack.js.org/) & [Tailwindcss](https://developers.google.com/chart/) components to display information from the [Paris Public Transport RATP API](https://data.ratp.fr/explore/?sort=modified&refine.publisher=RATP)
+* Angular 12 app using [Tailwindcss](https://developers.google.com/chart/) components to display information from the [Paris Public Transport RATP API](https://data.ratp.fr/explore/?sort=modified&refine.publisher=RATP)
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/AndrewJBateman/angular-tailwind-ratp?style=for-the-badge)
 ![GitHub issues](https://img.shields.io/github/issues/AndrewJBateman/angular-tailwind-ratp?style=for-the-badge)
@@ -42,8 +42,8 @@
 
 ## :signal_strength: Technologies
 
-* [Angular framework v11](https://angular.io/)
-* [@angular/forms](https://angular.io/api/forms) used with [PatternValidator](https://angular.io/api/forms/PatternValidator)
+* [Angular framework v12](https://angular.io/)
+* [@angular/forms v12](https://angular.io/api/forms) used with [PatternValidator](https://angular.io/api/forms/PatternValidator)
 * [Reactive Extensions Library for Javascript rxjs v6](https://rxjs.dev/)
 * [Tailwindcss v2](https://tailwindcss.com/) CSS framework
 
@@ -51,7 +51,6 @@
 
 * Run `npm i` to install dependencies.
 * Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-* Run `ng build` to build the project without css purging.
 * Run `ng build --configuration production` for a production build with css purging.
 * The build artifacts will be stored in the `dist/` directory.
 
