@@ -42,7 +42,7 @@ export interface Record {
     dea_numero_rue_livraison_dea_rue_livraison: string;
     tco_libelle: string;
     ville: string;
-  }
+  };
   record_timestamp: string;
-  recordid: string
+  recordid: string;
 }

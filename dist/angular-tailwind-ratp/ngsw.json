@@ -1,0 +1,117 @@
+{
+  "configVersion": 1,
+  "timestamp": 1616257931831,
+  "index": "/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/4.0e500cf08a51da4b7cc8.js",
+        "/5.13eac2ad3f4f731984a3.js",
+        "/favicon.ico",
+        "/index.html",
+        "/main.b79dede2e39b04b3e683.js",
+        "/manifest.webmanifest",
+        "/polyfills.b77ee6be5b0f47e97fd6.js",
+        "/runtime.2e9a5a72f8d5e20a84ec.js",
+        "/styles.5f71d241dedb3c4f4051.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/assets/icons/apple-touch-icon-180x180.png",
+        "/assets/icons/favicon-16x16.png",
+        "/assets/icons/favicon-32x32.png",
+        "/assets/icons/favicon.ico",
+        "/assets/icons/pwa-192x192.png",
+        "/assets/icons/pwa-512x512.png",
+        "/assets/icons/tile150x150.png",
+        "/assets/icons/tile310x150.png",
+        "/assets/icons/tile310x310.png",
+        "/assets/icons/tile70x70.png",
+        "/assets/ratp.jpg",
+        "/assets/ratp.png",
+        "/assets/search.svg",
+        "/assets/splashscreens/ipad_splash.png",
+        "/assets/splashscreens/ipadpro1_splash.png",
+        "/assets/splashscreens/ipadpro2_splash.png",
+        "/assets/splashscreens/ipadpro3_splash.png",
+        "/assets/splashscreens/iphone5_splash.png",
+        "/assets/splashscreens/iphone6_splash.png",
+        "/assets/splashscreens/iphoneplus_splash.png",
+        "/assets/splashscreens/iphonex_splash.png",
+        "/assets/splashscreens/iphonexr_splash.png",
+        "/assets/splashscreens/iphonexsmax_splash.png",
+        "/assets/train-icon.svg"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/4.0e500cf08a51da4b7cc8.js": "2a6f625521247d4ba0f89d6f0686083620cbfcbd",
+    "/5.13eac2ad3f4f731984a3.js": "43718cbe6a6c6f3b1b2e61d7d0a66c06d1f1ddf3",
+    "/assets/icons/apple-touch-icon-180x180.png": "e229018a12e3d965404db075e7e9595690c3afe3",
+    "/assets/icons/favicon-16x16.png": "18f972b76bf9e4c5092e7cc7bb107047b533add0",
+    "/assets/icons/favicon-32x32.png": "cfd035cdb9d0034f3b5a4816239876dfe8af5c54",
+    "/assets/icons/favicon.ico": "ba92778a615eeffe8b55150b8dff63474244301b",
+    "/assets/icons/pwa-192x192.png": "e8d9b1119270e6e6fdab47e2b721d1afb92004f3",
+    "/assets/icons/pwa-512x512.png": "2a6359c1a6e751e9b313b74ea6d503a2baef917b",
+    "/assets/icons/tile150x150.png": "6782c70a96f7b3824d8f00da96575918f5bb8016",
+    "/assets/icons/tile310x150.png": "d5fa016b14afeca4721d1828d090205c60afb57d",
+    "/assets/icons/tile310x310.png": "17074d28a1459da1aac6f264e08530d0612d5827",
+    "/assets/icons/tile70x70.png": "637afe0be1584f91b1ddc0e414144614d8d8f302",
+    "/assets/ratp.jpg": "9cd978f7d3b4f8a6bb26dedbddaf01f9607de937",
+    "/assets/ratp.png": "2295e18265be38b6287a36574d3611575f7d2df6",
+    "/assets/search.svg": "7c5ab09214670c84d454d5e35579816e3aca1afd",
+    "/assets/splashscreens/ipad_splash.png": "cdd0370f0125b4a3b2e1c39671b4165b39046382",
+    "/assets/splashscreens/ipadpro1_splash.png": "ec1cef54d6e109893a6edfc30bfa6a845d6965fd",
+    "/assets/splashscreens/ipadpro2_splash.png": "c1ba1f4621645fa4bf5a20943aa04ccee6c1e7f1",
+    "/assets/splashscreens/ipadpro3_splash.png": "3bf34113487871df7e80adf233125c29712cd526",
+    "/assets/splashscreens/iphone5_splash.png": "8196e7666b7156ef3eaa6d37b2e3eed2846f1052",
+    "/assets/splashscreens/iphone6_splash.png": "fe3fee40519eb1784c98eec2fa2b77927b5048a2",
+    "/assets/splashscreens/iphoneplus_splash.png": "8dba57a07964ddd61e3366f4eadf1540e42200aa",
+    "/assets/splashscreens/iphonex_splash.png": "d9c684c6c5aeb0b45381aed7c95253915cdcc9e2",
+    "/assets/splashscreens/iphonexr_splash.png": "f614b994588c2fd1f665ae12c09baf94098d3987",
+    "/assets/splashscreens/iphonexsmax_splash.png": "3c413ecc7ba7b09191bded06549b54266743cf35",
+    "/assets/train-icon.svg": "819e99fc58918a1bf4109d2fec9783b7fe6f696a",
+    "/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
+    "/index.html": "2c099995fcb79488cf914a7810ac74992143f102",
+    "/main.b79dede2e39b04b3e683.js": "539d7113b74af6dc8f78d32523972ca495e8984f",
+    "/manifest.webmanifest": "6a79e16cf62cc05aabff53562f587c773ed5bc05",
+    "/polyfills.b77ee6be5b0f47e97fd6.js": "27746c769e1df2d6ffd70dfcbb0baaee70b1e3d5",
+    "/runtime.2e9a5a72f8d5e20a84ec.js": "da401d03b253839366ee8dedfdcf146912e4214e",
+    "/styles.5f71d241dedb3c4f4051.css": "d63f3f32eb8727d77aecefcf9bc6f3b61c7ddbb0"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}

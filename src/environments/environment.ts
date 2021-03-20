@@ -5,8 +5,8 @@
 export const environment = {
   production: false,
   application: {
-    name: "RATP Commerce"
-  }
+    name: 'RATP Commerce',
+  },
 };
 
 /*

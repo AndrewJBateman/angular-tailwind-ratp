@@ -46,16 +46,19 @@
 * [@angular/forms v12](https://angular.io/api/forms) used with [PatternValidator](https://angular.io/api/forms/PatternValidator)
 * [Reactive Extensions Library for Javascript rxjs v6](https://rxjs.dev/)
 * [Tailwindcss v2](https://tailwindcss.com/) CSS framework
+* [Angular PWA](https://angular.io/guide/service-worker-getting-started)
 
 ## :floppy_disk: Setup
 
 * Run `npm i` to install dependencies.
 * Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-* Run `ng build --configuration production` for a production build with css purging.
-* The build artifacts will be stored in the `dist/` directory.
+* Run `npm run build` for a production build with css purging.
+* Run `http-server` to view build on an apple/android phone or simulator (pick 2nd http address supplied)
+* The build artifacts will be stored in the `dist/angular-tailwind-ratp` directory.
 
 ## :wrench: Testing
 
+* Run `ng lint` to lint all files using tslint
 * Run `ng test` to run Jasmine unit tests via [Karma](https://karma-runner.github.io). Currrently 9/9 tests pass
 * Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/). Currently 0 tests so all pass
 
