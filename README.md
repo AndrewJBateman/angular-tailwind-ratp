@@ -92,7 +92,7 @@ getRatpData(query: string): Observable<RatpResponse> {
 
 ## :clipboard: Status & To-Do List
 
-* Status: Working, deployed to Netlify. All files pass linting. App passes unit tests. e2e testing not set up so doesn't pass.
+* Status: Working, deployed to Netlify. All files pass linting. App passes unit tests.
 * To-Do: add tests, language translations
 * To-Do: create angular-tailwind-pwa template for separate repo
 
