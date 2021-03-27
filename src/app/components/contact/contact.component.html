@@ -2,69 +2,71 @@
   <meta name="description" content="Shows contact details of author" />
 </head>
 
-<div class="min-w-screen min-h-screen ratp-green">
-  <div class="flex mx-auto pt-10 h-screen w-full justify-center" *ngIf="user">
+<div class="min-h-screen min-w-screen ratp-green">
+  <div class="flex justify-center w-full h-screen pt-10 mx-auto" *ngIf="user">
     <div class="max-w-xs">
-      <div class="info-card shadow-xl">
-        <div class="photo-wrapper px-2 pt-5">
+      <div class="shadow-xl info-card">
+        <div class="px-2 pt-5 photo-wrapper">
           <img
-            class="w-40 h-40 rounded-full mx-auto"
-            [src]="user.avatar_url"
-            alt="Github user profile photo"
+            class="w-40 h-40 mx-auto rounded-full"
+            width="40px"
+            height="40px"
+            src="../../../assets/contact.svg"
+            alt="Image of author at pc"
           />
         </div>
         <div class="p-2">
           <h3
-            class="text-center text-xl text-gray-900 font-medium leading-8 pb-1"
+            class="pb-1 text-xl font-medium leading-8 text-center text-gray-900"
           >
-            <span class="text-xs text-gray-600 italic">App par</span>
+            <span class="text-xs italic text-gray-600">App par</span>
             {{ user.name }}
           </h3>
-          <div class="table-text-left text-center">
-            <p class="pb-1 px-2 text-gray-600 text-xs">
-              <span class="text-gray-900 font-bold"
+          <div class="text-center table-text-left">
+            <p class="px-2 pb-1 text-xs text-gray-600">
+              <span class="font-bold text-gray-900"
                 >{{ userBio | slice: 0:42 }}
               </span>
               {{ userBio | slice: 42 }}
             </p>
           </div>
-          <table class="text-xs my-2 mx-auto">
+          <table class="mx-auto my-2 text-xs">
             <tbody>
               <tr>
                 <td class="px-2">
-                  <span class="text-gray-900 font-bold">Github Repos:</span>
+                  <span class="font-bold text-gray-900">Github Repos:</span>
                 </td>
-                <td class="px-2 text-gray-600 text-xs">
+                <td class="px-2 text-xs text-gray-600">
                   {{ user.public_repos }}
                 </td>
               </tr>
               <tr>
                 <td class="px-2">
-                  <span class="text-gray-900 font-bold">Emplacement:</span>
+                  <span class="font-bold text-gray-900">Emplacement:</span>
                 </td>
-                <td class="px-2 text-gray-600 text-xs">Spain, France</td>
+                <td class="px-2 text-xs text-gray-600">Spain, France</td>
               </tr>
               <tr>
                 <td class="px-2">
-                  <span class="text-gray-900 font-bold">Mis à Jour</span>
+                  <span class="font-bold text-gray-900">Mis à Jour</span>
                 </td>
-                <td class="px-2 text-gray-600 text-xs">
+                <td class="px-2 text-xs text-gray-600">
                   {{ user.updated_at | date }}
                 </td>
               </tr>
             </tbody>
           </table>
 
-          <div class="text-center my-3">
+          <div class="my-3 text-center">
             <a
-              class="text-xs text-indigo-600 italic hover:underline hover:text-indigo-800 font-medium mr-5"
+              class="mr-5 text-xs italic font-medium text-indigo-600 hover:underline hover:text-indigo-800"
               href="https://github.com/AndrewJBateman"
               target="_blank"
               rel="noopener noreferrer"
               >Voir mon profil Github</a
             >
             <a
-              class="text-xs text-indigo-600 italic hover:underline hover:text-indigo-800 font-medium"
+              class="text-xs italic font-medium text-indigo-600 hover:underline hover:text-indigo-800"
               href="https://andrewbateman.org/contact"
               target="_blank"
               rel="noopener noreferrer"

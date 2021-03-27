@@ -52,7 +52,7 @@
 * Run `npm i` to install dependencies.
 * Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 * Run `npm run build` for a production build with css purging.
-* Run `http-server` to view build on an apple/android phone or simulator (pick 2nd http address supplied)
+* Run `http-server -p 8080 -c-1 dist/angular-tailwind-ratp` to view build on an apple/android phone or simulator (pick 2nd http address supplied)
 * The build artifacts will be stored in the `dist/angular-tailwind-ratp` directory.
 
 ## :wrench: Testing
