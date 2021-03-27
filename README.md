@@ -89,6 +89,7 @@ getRatpData(query: string): Observable<RatpResponse> {
 * Tailwind build for production css purge results in a very small styles bundle (8.16kB latest)
 * Progressive Web App (PWA)
 * Perfect Google Chrome Lighthouse 100% score
+* Netlify deploiyment set up so commiting a build folder to Github will update the deployment automatically
 
 ## :clipboard: Status & To-Do List
 
