@@ -89,7 +89,7 @@ getRatpData(query: string): Observable<RatpResponse> {
 * Postcode search form with validation and error messages checks that only a 5-number postcode is entered
 * Tailwind build for production css purge results in a very small styles bundle (8.16kB latest)
 * Progressive Web App (PWA)
-* Perfect Google Chrome Lighthouse 100% score
+* Google Chrome Lighthouse scores for pages: home: 100%, about: 100%,
 * Netlify deploiyment set up so commiting a build folder to Github will update the deployment automatically
 
 ## :clipboard: Status & To-Do List
