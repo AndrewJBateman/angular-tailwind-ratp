@@ -27,11 +27,12 @@
 
 ## :books: General info
 
+* User post code search will show a list of companies open to the public with the vicinity of the local RATP station. Note only post codes with RATP stations will show a list, otherwise an error message is shown to try a different post code.
 * [Tailwind Responsive Table](https://tailwindcomponents.com/component/responsive-table-1) used to show RATP data
 * About and Contact pages give more information on app using Tailwind css cards
 * Website is in French
 * To build for production Tailwind’s purge option is used to tree-shake unused styles and optimize final build size.
-* [rxjs take(1) operater](https://advancedweb.hu/rxjs-the-differences-between-first-take-1-and-single/) used to take first element from the Ratp & Github observable streams then close them, so unsubscribing is not necessary.
+* [rxjs take(1) operater](https://advancedweb.hu/rxjs-the-differences-between-first-take-1-and-single/) used to take first element from the Ratp & Github observables then close them, so unsubscribing is not necessary.
 
 ## :camera: Screenshots
 
@@ -93,9 +94,8 @@ getRatpData(query: string): Observable<RatpResponse> {
 
 ## :clipboard: Status & To-Do List
 
-* Status: Working, deployed to Netlify. All files pass linting. App passes unit tests.
-* To-Do: add tests, language translations
-* To-Do: create angular-tailwind-pwa template for separate repo
+* Status: Working, deployed to Netlify. Unable to convert to SSR. All files pass linting. App passes unit tests.
+* To-Do: redo SSR. Add tests, language translations
 
 ## :clap: Inspiration
 
