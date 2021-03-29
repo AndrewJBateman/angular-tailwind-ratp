@@ -32,13 +32,14 @@
             height="40px"
             src="../../../assets/contact.svg"
             alt="Image of author at pc"
+            loading="lazy"
           />
         </div>
         <div class="p-2">
           <h3
             class="pb-1 text-xl font-medium leading-8 text-center text-blue-900"
           >
-            <span class="text-xs italic text-gray-600">App par</span>
+            <span class="text-xs italic text-blue-600">App par</span>
             {{ user.name }}
           </h3>
           <div class="text-center table-text-left">
@@ -53,7 +54,7 @@
             <tbody>
               <tr>
                 <td class="px-2">
-                  <span class="font-bold text-gray-900">Github Repos:</span>
+                  <span class="font-bold text-blue-900">Github Repos:</span>
                 </td>
                 <td class="px-2 text-xs text-gray-600">
                   {{ user.public_repos }}
@@ -61,13 +62,13 @@
               </tr>
               <tr>
                 <td class="px-2">
-                  <span class="font-bold text-gray-900">Emplacement:</span>
+                  <span class="font-bold text-blue-900">Emplacement:</span>
                 </td>
                 <td class="px-2 text-xs text-gray-600">France, Espagne</td>
               </tr>
               <tr>
                 <td class="px-2">
-                  <span class="font-bold text-gray-900">Mis à Jour</span>
+                  <span class="font-bold text-blue-900">Mis à Jour:</span>
                 </td>
                 <td class="px-2 text-xs text-gray-600">
                   {{ user.updated_at | date }}
