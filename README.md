@@ -89,13 +89,13 @@ getRatpData(query: string): Observable<RatpResponse> {
 * Postcode search form with validation and error messages checks that only a 5-number postcode is entered
 * Tailwind build for production css purge results in a very small styles bundle (8.16kB latest)
 * Progressive Web App (PWA)
-* Google Chrome Lighthouse scores for pages: home: 100%, about: 100%,
+* Google Chrome Lighthouse scores for pages: home: 100%, about: 100%, contact 98%
 * Netlify deploiyment set up so commiting a build folder to Github will update the deployment automatically
 
 ## :clipboard: Status & To-Do List
 
 * Status: Working, deployed to Netlify. Unable to convert to SSR. All files pass linting. App passes unit tests.
-* To-Do: redo SSR. Add tests, language translations
+* To-Do: About - fix samesite coookie or remove link redo SSR. Add tests, language translations
 
 ## :clap: Inspiration
 

@@ -4,18 +4,25 @@
     rel="preload"
     as="script"
     href="https://github.com/AndrewJBateman"
-    SameSite="Lax"
+    Set-Cookie:
+    CookieName="CookieValue;"
+    SameSite="Lax;"
   />
   <link
     rel="preload"
     as="script"
     href="https://andrewbateman.org/contact"
-    SameSite="Lax"
+    Set-Cookie:
+    CookieName="CookieValue;"
+    SameSite="Lax;"
   />
 </head>
 
 <div class="min-h-screen min-w-screen ratp-green">
-  <div class="flex justify-center w-full h-screen pt-10 mx-auto" *ngIf="user">
+  <div
+    class="flex justify-center w-full h-screen pt-10 mx-auto"
+    *ngIf="user$ | async as user"
+  >
     <div class="max-w-xs">
       <div class="shadow-xl info-card">
         <div class="px-2 pt-5 photo-wrapper">
@@ -56,7 +63,7 @@
                 <td class="px-2">
                   <span class="font-bold text-gray-900">Emplacement:</span>
                 </td>
-                <td class="px-2 text-xs text-gray-600">Spain, France</td>
+                <td class="px-2 text-xs text-gray-600">France, Espagne</td>
               </tr>
               <tr>
                 <td class="px-2">
