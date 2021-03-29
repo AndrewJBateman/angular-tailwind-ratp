@@ -95,7 +95,7 @@ getRatpData(query: string): Observable<RatpResponse> {
 ## :clipboard: Status & To-Do List
 
 * Status: Working, deployed to Netlify. Unable to convert to SSR. All files pass linting. App passes unit tests.
-* To-Do: About - fix samesite coookie or remove link redo SSR. Add tests, language translations
+* To-Do: About - Redo SSR. Add tests, language translations
 
 ## :clap: Inspiration
 
