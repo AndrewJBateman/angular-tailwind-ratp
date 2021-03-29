@@ -39,14 +39,12 @@
           <h3
             class="pb-1 text-xl font-medium leading-8 text-center text-blue-900"
           >
-            <span class="text-xs italic text-blue-600">App par</span>
+            <span class="text-xs italic text-gray-600">App par</span>
             {{ user.name }}
           </h3>
           <div class="text-center table-text-left">
             <p class="px-2 pb-1 text-xs">
-              <span class="font-semibold"
-                >{{ user.bio | slice: 0:42 }}
-              </span>
+              <span>{{ user.bio | slice: 0:42 }} </span>
               {{ user.bio | slice: 42 }}
             </p>
           </div>
