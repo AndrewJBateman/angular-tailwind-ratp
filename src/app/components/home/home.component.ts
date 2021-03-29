@@ -4,7 +4,6 @@ import { NgForm } from '@angular/forms';
 import { environment } from '../../../environments/environment';
 import { RatpService } from '../../services/ratp.service';
 import { RatpResponse, Record } from '../../models/ratp';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-home',
