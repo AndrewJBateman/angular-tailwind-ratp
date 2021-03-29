@@ -9,7 +9,6 @@ import { GithubService } from '../../services/github.service';
 })
 export class ContactComponent implements OnInit {
   user$: Observable<User> = new Observable();
-  userBio = `Programmation | Ingénierie | Cloud | IT - Développeur Full-Stack avec une maîtrise en ingénierie et plus de 20 ans d'expérience internationale en ingénierie.`;
 
   constructor(private githubService: GithubService) {}
 
