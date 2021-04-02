@@ -27,7 +27,7 @@
 
 ## :books: General info
 
-* User post code search will show a list of companies open to the public with the vicinity of the local RATP station. Note only post codes with RATP stations will show a list, otherwise an error message is shown to try a different post code.
+* User post code search will show a list of companies open to the public within the vicinity of the local RATP station. Note, only post codes with RATP stations will show a list (e.g. 75005 Paris has RATP, but 31000 Toulouse has no RATP), otherwise an error message is shown to try a different post code.
 * [Tailwind Responsive Table](https://tailwindcomponents.com/component/responsive-table-1) used to show RATP data
 * About and Contact pages give more information on app using Tailwind css cards
 * Website is in French
@@ -52,9 +52,9 @@
 
 * Run `npm i` to install dependencies.
 * Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-* Run `npm run build` for a production build with css purging.
+* Run `npm run build` for a production build with css purging. Add defer to index.html css link
 * Run `http-server -p 8080 -c-1 dist/angular-tailwind-ratp` to view build on an apple/android phone or simulator (pick 2nd http address supplied)
-* The build artifacts will be stored in the `dist/angular-tailwind-ratp` directory.
+* The build files will be stored in the `dist/angular-tailwind-ratp` directory.
 
 ## :wrench: Testing
 
@@ -86,6 +86,7 @@ getRatpData(query: string): Observable<RatpResponse> {
 
 * The RATP & Github APIs do not require an API key
 * Lazy-loading of about and contact pages
+* Http headers added due to Content Security Policy for prefetch-src, X Content Type Options, X Frame Options, Content Security Policy
 * Postcode search form with validation and error messages checks that only a 5-number postcode is entered
 * Tailwind build for production css purge results in a very small styles bundle (8.16kB latest)
 * Progressive Web App (PWA)
@@ -104,6 +105,11 @@ getRatpData(query: string): Observable<RatpResponse> {
 * [RATP API doc: Commerces de proximité agréés RATP](https://dataratp2.opendatasoft.com/explore/dataset/liste-des-commerces-de-proximite-agrees-ratp/api/?sort=code_postal)
 * [StackOverflow: How to solve semi-colon expected css(css-semicolonexpected)](https://stackoverflow.com/questions/61443484/how-to-solve-semi-colon-expected-csscss-semicolonexpected)
 * [dev.to: Setup TailwindCSS in Angular the easy way](https://dev.to/angular/setup-tailwindcss-in-angular-the-easy-way-1i5l)
+* [CSP: prefetch-src](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/prefetch-src)
+* [How does Content Security Policy (CSP) work?](https://stackoverflow.com/questions/30280370/how-does-content-security-policy-csp-work)
+* [Mozilla, Link prefetching FAQ](https://developer.mozilla.org/en-US/docs/Web/HTTP/Link_prefetching_FAQ)
+* [Mozilla, X-XSS-Protection](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection)
+* [Website scanner for JavaScript vulnerabilities and security headers](https://snyk.io/test/website-scanner)
 
 ## :envelope: Contact
 

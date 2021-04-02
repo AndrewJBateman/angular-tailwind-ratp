@@ -3,6 +3,7 @@
     name="description"
     content="Home page shows commercial establishments near to RATP stations"
   />
+  X-Frame-Options="SAMEORIGIN"
 </head>
 
 <div class="min-h-screen min-w-screen ratp-green">
@@ -33,7 +34,6 @@
               minlength="5"
               maxlength="5"
               pattern="[0-9]*"
-
             />
             <button
               aria-label="ratp post-code search button"
@@ -44,7 +44,8 @@
               <img
                 class="w-5 h-5 fill-current"
                 src="./../../../assets/search.svg"
-                width="20" height="20"
+                width="20"
+                height="20"
                 alt="search button magnifying glass image"
               />
             </button>
@@ -60,9 +61,7 @@
       <div class="rounded-lg shadow-xl info-card">
         <div class="p-1 pl-2">
           <div class="font-bold text-red-600">
-            <div
-              *ngIf="name.errors"
-            >
+            <div *ngIf="name.errors">
               Un code postal de 5 chiffres est requis
             </div>
           </div>
@@ -79,6 +78,7 @@
       </div>
     </div>
 
+    <!--show table of data, if there is data-->
     <div *ngIf="dataToShow">
       <!--summary panel-->
       <div class="max-w-xs rounded">
@@ -135,13 +135,14 @@
               <td class="table-cell">
                 {{ data?.fields?.dea_numero_rue_livraison_dea_rue_livraison }}
               </td>
-              <td class="table-cell" *ngIf="data.fields.dea_fermeture else noData">
+              <td
+                class="table-cell"
+                *ngIf="data.fields.dea_fermeture; else noData"
+              >
                 {{ data.fields.dea_fermeture }}
               </td>
               <ng-template #noData>
-                <td class="table-cell">
-                  Pas de Données
-                </td>
+                <td class="table-cell">Pas de Données</td>
               </ng-template>
             </tr>
           </tbody>
