@@ -44,7 +44,7 @@
 * [@angular/forms v12](https://angular.io/api/forms) used with [PatternValidator](https://angular.io/api/forms/PatternValidator)
 * [Reactive Extensions Library for Javascript rxjs v6](https://rxjs.dev/)
 * [Tailwindcss v2](https://tailwindcss.com/) CSS framework
-* [Angular PWA](https://angular.io/guide/service-worker-getting-started)
+* [Angular PWA v12](https://angular.io/guide/service-worker-getting-started)
 
 ## :floppy_disk: Setup
 
