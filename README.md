@@ -1,14 +1,12 @@
 # :zap: Angular Tailwind RATP
 
-* Angular 12 app using [Tailwindcss](https://developers.google.com/chart/) components to display information from the [Paris Public Transport RATP API](https://data.ratp.fr/explore/?sort=modified&refine.publisher=RATP)
+* Angular 12 app using [Tailwindcss](https://tailwindcss.com/) components to display information from the [Paris Public Transport RATP API](https://data.ratp.fr/explore/?sort=modified&refine.publisher=RATP)
+* **Note:** to open web links in a new window use: _ctrl+click on link_
 
-![GitHub repo size](https://img.shields.io/github/repo-size/AndrewJBateman/angular-tailwind-ratp?style=for-the-badge)
-![GitHub issues](https://img.shields.io/github/issues/AndrewJBateman/angular-tailwind-ratp?style=for-the-badge)
-![GitHub pull requests](https://img.shields.io/github/issues-pr/AndrewJBateman/angular-tailwind-ratp?style=for-the-badge)
-![GitHub Repo stars](https://img.shields.io/github/stars/AndrewJBateman/angular-tailwind-ratp?style=for-the-badge)
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/AndrewJBateman/angular-tailwind-ratp?style=for-the-badge)
-
-*** Note: to open web links in a new window use: _ctrl+click on link_**
+![GitHub repo size](https://img.shields.io/github/repo-size/AndrewJBateman/angular-tailwind-ratp?style=plastic)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/AndrewJBateman/angular-tailwind-ratp?style=plastic)
+![GitHub Repo stars](https://img.shields.io/github/stars/AndrewJBateman/angular-tailwind-ratp?style=plastic)
+![GitHub last commit](https://img.shields.io/github/last-commit/AndrewJBateman/angular-tailwind-ratp?style=plastic)
 
 ## :page_facing_up: Table of contents
 
@@ -90,7 +88,7 @@ getRatpData(query: string): Observable<RatpResponse> {
 * Postcode search form with validation and error messages checks that only a 5-number postcode is entered
 * Tailwind build for production css purge results in a very small styles bundle (8.16kB latest)
 * Progressive Web App (PWA)
-* Google Chrome Lighthouse scores for pages: home: 100%, about: 100%, contact 98%
+* Excellent Google Chrome Lighthouse scores for pages: home: 100%, about: 100%, contact 98%
 * Netlify deploiyment set up so commiting a build folder to Github will update the deployment automatically
 
 ## :clipboard: Status & To-Do List
