@@ -43,7 +43,7 @@
 
 * [Angular framework v13](https://angular.io/)
 * [@angular/forms v13](https://angular.io/api/forms) used with [PatternValidator](https://angular.io/api/forms/PatternValidator)
-* [Reactive Extensions Library for Javascript rxjs v6](https://rxjs.dev/)
+* [Reactive Extensions Library for Javascript rxjs v7](https://rxjs.dev/)
 * [Tailwindcss v2](https://tailwindcss.com/) CSS framework
 * [Angular PWA v13](https://angular.io/guide/service-worker-getting-started)
 
@@ -57,9 +57,7 @@
 
 ## :wrench: Testing
 
-* Run `ng lint` to lint all files using tslint
 * Run `ng test` to run Jasmine unit tests via [Karma](https://karma-runner.github.io). Currrently 9/9 tests pass
-* Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/). Currently 0 tests so all pass
 
 ## :computer: Code Examples
 
