@@ -18,10 +18,7 @@ export class GithubService {
     return this.http.get<User>(userSearchUrl).pipe(
       take(1),
       catchError((err) => {
-        return throwError(
-          'There was a problem fetching data from Github API, error: ',
-          err
-        );
+        throw "error in getting API data. Details: " + err;
       })
     );
   }
