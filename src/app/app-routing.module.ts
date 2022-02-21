@@ -10,6 +10,11 @@ const routes: Routes = [
     component: HomeComponent,
   },
   {
+    path: 'ratp',
+    loadChildren: () =>
+      import('./components/ratp/ratp.module').then((mod) => mod.RatpModule),
+  },
+  {
     path: 'about',
     loadChildren: () =>
       import('./components/about/about.module').then((mod) => mod.AboutModule),

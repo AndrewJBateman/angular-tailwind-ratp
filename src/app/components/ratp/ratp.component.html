@@ -1,0 +1,26 @@
+<head>
+  <meta
+    name="description"
+    content="Ratp traffic info. page uses Tailwind-styled cards to display info. that can be clicked on to show a more detail."
+  />
+</head>
+
+<div *ngIf="loading; else cards">
+  <app-spinner></app-spinner>
+</div>
+
+<ng-template #cards>
+  <body class="min-h-screen min-w-screen">
+    <div
+      class="grid p-4 gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+    >
+      <app-ratp-card
+        *ngFor="let ratp of metroTraffic; let i = index"
+        class="transition-transform transform hover:scale-105 cursor-pointer duration-300 ease-in-out"
+        [ratp]="ratp"
+        (click)="onOpenCardDetail()"
+      >
+      </app-ratp-card>
+    </div>
+  </body>
+</ng-template>
