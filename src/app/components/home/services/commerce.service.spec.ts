@@ -5,20 +5,20 @@ import {
 } from '@angular/common/http/testing';
 import { HttpClient } from '@angular/common/http';
 
-import { RatpService } from './ratp.service';
-import { RatpResponse } from '../models/ratp';
+import { CommerceService } from './commerce.service';
+import { RatpResponse } from '../models/ratp-commerce';
 
-describe('RatpService', () => {
-  let service: RatpService;
+describe('CommerceService', () => {
+  let service: CommerceService;
   let httpMock: HttpTestingController;
   let httpClient: HttpClient;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
-      providers: [RatpService],
+      providers: [CommerceService],
     });
-    service = TestBed.inject(RatpService);
+    service = TestBed.inject(CommerceService);
     httpMock = TestBed.inject(HttpTestingController);
     httpClient = TestBed.inject(HttpClient);
   });

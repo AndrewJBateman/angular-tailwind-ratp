@@ -2,8 +2,8 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
 import { environment } from '../../../environments/environment';
-import { RatpService } from '../../services/ratp.service';
-import { RatpResponse, Record } from '../../models/ratp';
+import { CommerceService } from './services/commerce.service';
+import { RatpResponse, Record } from './models/ratp-commerce';
 
 @Component({
   selector: 'app-home',
@@ -26,7 +26,7 @@ export class HomeComponent implements OnInit {
   dataLength: number = 0;
   date: string = '';
 
-  constructor(private ratpService: RatpService) {}
+  constructor(private commerceService: CommerceService) {}
 
   ngOnInit(): void {}
 
@@ -36,7 +36,7 @@ export class HomeComponent implements OnInit {
   }
 
   onSearchData(postCode: string): void {
-    this.ratpService.getRatpData(postCode).subscribe((data: RatpResponse) => {
+    this.commerceService.getRatpCommerceData(postCode).subscribe((data: RatpResponse) => {
       this.ratpData = data.records;
       this.initialState = false;
       if (this.ratpData.length > 0) {
