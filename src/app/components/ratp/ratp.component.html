@@ -12,15 +12,21 @@
 <ng-template #cards>
   <body class="min-h-screen min-w-screen">
     <div
-      class="grid p-4 gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+      class="grid p-2 gap-2 xs: grid-cols-2 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-8"
     >
-      <app-ratp-card
-        *ngFor="let ratp of metroTraffic; let i = index"
-        class="transition-transform transform hover:scale-105 cursor-pointer duration-300 ease-in-out"
-        [ratp]="ratp"
-        (click)="onOpenCardDetail()"
-      >
-      </app-ratp-card>
+      <div *ngFor="let ratp of metroTraffic; let i = index">
+        <div class="has-tooltip">
+          <span
+            class="tooltip rounded shadow-lg p-1 bg-gray-100 text-red-500 -mt-8"
+            ><p>{{ ratp.message }}</p></span
+          >
+          <app-ratp-card
+            class="transition-transform transform hover:scale-105 cursor-pointer duration-300 ease-in-out"
+            [ratp]="ratp"
+          >
+          </app-ratp-card>
+        </div>
+      </div>
     </div>
   </body>
 </ng-template>

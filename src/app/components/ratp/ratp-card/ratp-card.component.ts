@@ -1,17 +1,12 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
+
 import { RatpTraffic } from '../models/ratp-traffic';
 
 @Component({
   selector: 'app-ratp-card',
-  templateUrl: './ratp-card.component.html'
+  templateUrl: './ratp-card.component.html',
 })
-export class RatpCardComponent implements OnInit {
+export class RatpCardComponent {
   @Input()
   ratp!: RatpTraffic;
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
 }
