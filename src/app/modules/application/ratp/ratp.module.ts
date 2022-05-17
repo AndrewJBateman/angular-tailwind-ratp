@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { RatpRoutingModule } from './ratp-routing.module';
 import { RatpComponent } from './ratp.component';
-import { SpinnerComponent } from '../spinner/spinner.component';
+import { SpinnerComponent } from '../../common/spinner/spinner.component';
 import { RatpCardModule } from './ratp-card/ratp-card.module';
 
 @NgModule({

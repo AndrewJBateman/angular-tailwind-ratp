@@ -44,4 +44,6 @@ export class RatpComponent implements OnInit {
   onOpenCardDetail = () => {
     console.log('clicked');
   };
+
+
 }

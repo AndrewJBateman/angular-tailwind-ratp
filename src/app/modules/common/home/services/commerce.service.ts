@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { catchError, take, tap } from 'rxjs/operators';
 
-import { RatpResponse } from '../../../components/home/models/ratp-commerce';
+import { RatpResponse } from '../../../common/home/models/ratp-commerce';
 
 const baseUrl = 'https://data.ratp.fr/api/records/1.0/search/?';
 const trafficSearchUrl = 'https://api-ratp.pierre-grimaud.fr/v4/traffic';

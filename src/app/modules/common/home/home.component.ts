@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
-import { environment } from '../../../environments/environment';
+import { environment } from '../../../../environments/environment';
 import { CommerceService } from './services/commerce.service';
 import { RatpResponse, Record } from './models/ratp-commerce';
 

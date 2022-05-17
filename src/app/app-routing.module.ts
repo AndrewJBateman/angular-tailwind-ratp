@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { HomeComponent } from './components/home/home.component';
-import { NotFoundComponent } from './components/not-found/not-found.component';
+import { HomeComponent } from './modules/common/home/home.component';
+import { NotFoundComponent } from './modules/common/not-found/not-found.component';
 
 const routes: Routes = [
   {
@@ -12,17 +12,17 @@ const routes: Routes = [
   {
     path: 'ratp',
     loadChildren: () =>
-      import('./components/ratp/ratp.module').then((mod) => mod.RatpModule),
+      import('./modules/application/ratp/ratp.module').then((mod) => mod.RatpModule),
   },
   {
     path: 'about',
     loadChildren: () =>
-      import('./components/about/about.module').then((mod) => mod.AboutModule),
+      import('./modules/common/about/about.module').then((mod) => mod.AboutModule),
   },
   {
     path: 'contact',
     loadChildren: () =>
-      import('./components/contact/contact.module').then(
+      import('./modules/common/contact/contact.module').then(
         (mod) => mod.ContactModule
       ),
   },

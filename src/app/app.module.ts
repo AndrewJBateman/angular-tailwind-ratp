@@ -6,15 +6,17 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 import { AppRoutingModule } from './app-routing.module';
 
-import { NavComponent } from './components/nav/nav.component';
+import { NavComponent } from './modules/common/nav/nav.component';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './components/home/home.component';
-import { NotFoundComponent } from './components/not-found/not-found.component';
+import { HomeComponent } from './modules/common/home/home.component';
+import { NotFoundComponent } from './modules/common/not-found/not-found.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { SvgInfoComponent } from './shared/components/svg-info/svg-info.component';
+
 
 @NgModule({
-  declarations: [AppComponent, NavComponent, HomeComponent, NotFoundComponent],
+  declarations: [AppComponent, NavComponent, HomeComponent, NotFoundComponent, SvgInfoComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

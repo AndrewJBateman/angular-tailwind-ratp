@@ -1,10 +1,11 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+/* stylelint-disable at-rule-no-unknown */
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
 @layer components {
   main {
-    padding-top: 0rem;
+    padding-top: 0;
     padding-left: 0 !important;
   }
 
@@ -33,38 +34,45 @@
     font-weight: bold;
   }
 
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+
   .ratp-green {
     background-color: #00aa91;
   }
 
-  .search-bar, .column-header {
-    background-color: rgb(245, 243, 243);
-    @apply shadow-xl
+  .search-bar .column-header {
+    background-color: rgb(245 243 243);
+
+    @apply shadow-xl;
   }
 
   .input-form {
-    background-color: rgb(245, 243, 243);
+    /* background-color: rgb(245 243 243); */
   }
 
   .info-card {
-    background-color: rgb(245, 243, 243);
-    @apply rounded-lg
+    background-color: rgb(245 243 243);
+
+    @apply rounded-lg;
   }
 
   .table-cell {
-    background-color: rgb(245, 243, 243);
-    @apply px-2
+    background-color: rgb(245 243 243);
+
+    @apply px-2;
   }
 
   .table-text-left {
-    @apply text-blue-900 font-bold
+    @apply font-bold text-blue-900;
   }
 
   .table-text-right {
-    @apply text-gray-600 text-xs
+    @apply text-xs text-gray-600;
   }
 
   .column-header {
-    @apply p-2 bg-blue-900
+    @apply p-2 bg-blue-900;
   }
 }
