@@ -13,6 +13,7 @@ import { NotFoundComponent } from './modules/common/not-found/not-found.componen
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { SvgInfoComponent } from './shared/components/svg-info/svg-info.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { SvgInfoComponent } from './shared/components/svg-info/svg-info.componen
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
     }),
+    BrowserAnimationsModule,
   ],
   providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }],
   bootstrap: [AppComponent],

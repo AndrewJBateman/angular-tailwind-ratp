@@ -15,6 +15,11 @@ const routes: Routes = [
       import('./modules/application/ratp/ratp.module').then((mod) => mod.RatpModule),
   },
   {
+    path: 'parking',
+    loadChildren: () =>
+      import('./modules/application/parking/parking.module').then((mod) => mod.ParkingModule),
+  },
+  {
     path: 'about',
     loadChildren: () =>
       import('./modules/common/about/about.module').then((mod) => mod.AboutModule),

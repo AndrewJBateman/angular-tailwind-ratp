@@ -1,0 +1,31 @@
+<div>
+  <h2 mat-dialog-title class="title">Places de stationnment PMR</h2>
+  <mat-dialog-content>
+    <p>
+      Il y a <span class="emphasis">{{ data.spaces }}</span> places de
+      stationnement pour les personnes à mobilité réduite (PMR) sur le
+      Territoire de Grand Paris Seine Ouest
+    </p>
+    <p>
+      Ces places sont aménagées et
+      <span class="emphasis">exclusivement réservées</span> aux véhicules dont
+      les conducteurs sont titulaires de la carte de Grand Invalide Civil ou de
+      Grand Invalide de Guerre.
+    </p>
+    <br>
+    <p>Producteur:
+      <a
+        href="
+      https://data.seineouest.fr/pages/accueil/"
+      >
+        <span class="emphasis">Seine Ouest</span>
+      </a>
+    </p>
+    <p>
+      Modifié: mai 2022
+    </p>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-mini-fab color="primary" (click)="onCloseDialog()"><mat-icon>exit_to_app</mat-icon></button>
+  </mat-dialog-actions>
+</div>
