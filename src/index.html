@@ -2,11 +2,11 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta
+    <!-- <meta
       X-Content-Type-Options="nosniff"
       http-equiv="Content-Security-Policy"
-      content="default-src 'self' 'unsafe-inline' https://api.github.com/users/andrewjbateman https://data.ratp.fr/api/ https://api-ratp.pierre-grimaud.fr/v4/traffic; script-src 'self' 'unsafe-inline' 'unsafe-eval'"
-    />
+      content="default-src 'self' 'unsafe-inline' https://api.github.com/users/andrewjbateman https://data.ratp.fr/api/ https://api-ratp.pierre-grimaud.fr/v4/traffic https://a.tile.openstreetmap.org/ https://b.tile.openstreetmap.org/ https://a.tile.openstreetmap.org/ script-src 'self' 'unsafe-inline' 'unsafe-eval'"
+    /> -->
     <title>AngularTailwindRatp</title>
     <base href="/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -97,7 +97,10 @@
       media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2)"
       rel="apple-touch-startup-image"
     />
-  </head>
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
   <body>
     <app-root></app-root>
     <noscript
