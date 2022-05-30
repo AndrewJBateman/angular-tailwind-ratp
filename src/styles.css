@@ -2,6 +2,8 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+@import "~leaflet/dist/leaflet.css";
+@import "~leaflet.markercluster/dist/MarkerCluster.Default.css";
 
 @layer components {
   main {
@@ -75,4 +77,22 @@
   .column-header {
     @apply p-2 bg-blue-900;
   }
+
+  .title {
+    @apply text-lg font-semibold text-blue-800;
+  }
+
+  .emphasis {
+    @apply italic text-blue-800;
+  }
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }
