@@ -1,6 +1,6 @@
 # :zap: Angular Tailwind RATP
 
-* Angular app using [Tailwindcss](https://tailwindcss.com/) components to display information from the [Paris Public Transport RATP API](https://data.ratp.fr/explore/?sort=modified&refine.publisher=RATP)
+* Angular app using [TailwindCSS](https://tailwindcss.com/) components to display information from the [Paris Public Transport RATP API](https://data.ratp.fr/explore/?sort=modified&refine.publisher=RATP) & the [Seine Ouest API](https://data.seineouest.fr/pages/accueil/) disabled parking data
 * **Note:** to open web links in a new window use: _ctrl+click on link_
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/AndrewJBateman/angular-tailwind-ratp?style=plastic)
@@ -26,8 +26,10 @@
 
 ## :books: General info
 
-* User post code search will show a list of companies open to the public within the vicinity of the local RATP station. Note, only post codes with RATP stations will show a list (e.g. 75005 Paris has RATP, but 31000 Toulouse has no RATP), otherwise an error message is shown to try a different post code.
+* Home page: User post code search will show a list of retail outlets open to the public within the vicinity of the local RATP station. Note, only post codes with RATP stations will show a list (e.g. 75005 Paris has RATP, but 31000 Toulouse has no RATP), otherwise an error message is shown to try a different post code.
 * [Tailwind Responsive Table](https://tailwindcomponents.com/component/responsive-table-1) used to show RATP data
+* RATP page: shows status of metro, bus.. using Tailwind micro-cards
+* Parking page: shows location of disabled parking as a cluster of icons+popups on a Leaflet map
 * About and Contact pages give more information on app using Tailwind css cards
 * Website is in French
 * To build for production Tailwind’s purge option is used to tree-shake unused styles and optimize final build size.
@@ -38,14 +40,18 @@
 ![Example screenshot](./img/home.jpg)
 ![Example screenshot](./img/about.jpg)
 ![Example screenshot](./img/contact.jpg)
+![Example screenshot](./img/parking.png)
 
 ## :signal_strength: Technologies
 
 * [Angular framework v13](https://angular.io/)
 * [@angular/forms v13](https://angular.io/api/forms) used with [PatternValidator](https://angular.io/api/forms/PatternValidator)
 * [Reactive Extensions Library for Javascript rxjs v7](https://rxjs.dev/)
-* [Tailwindcss v2](https://tailwindcss.com/) CSS framework
+* [Tailwindcss v3](https://tailwindcss.com/) CSS framework
 * [Angular PWA v13](https://angular.io/guide/service-worker-getting-started)
+* [Leaflet v1](https://leafletjs.com/) open-source JavaScript library
+for mobile-friendly interactive maps
+* [Leaflet Marker Cluster](https://github.com/Leaflet/Leaflet.markercluster) Marker Clustering plaugin JS library for interactive maps
 
 ## :floppy_disk: Setup
 
@@ -61,7 +67,7 @@
 
 ## :computer: Code Examples
 
-* `ratp.service.ts` - function to fetch Ratp API data based on a postcode string input
+* `ratp.service.ts` - function to fetch RATP API data based on a postcode string input
 
 ```typescript
 getRatpData(query: string): Observable<RatpResponse> {
@@ -82,18 +88,18 @@ getRatpData(query: string): Observable<RatpResponse> {
 ## :cool: Features
 
 * The RATP & Github APIs do not require an API key
-* Lazy-loading of about and contact pages
+* Lazy-loading of all pages except 'Home'
 * Http headers added due to Content Security Policy for prefetch-src, X Content Type Options, X Frame Options, Content Security Policy
 * Postcode search form with validation and error messages checks that only a 5-number postcode is entered
 * Tailwind build for production css purge results in a very small styles bundle (8.16kB latest)
 * Progressive Web App (PWA)
 * Excellent Google Chrome Lighthouse scores for pages: home: 100%, about: 100%, contact 98%
-* Netlify deploiyment set up so commiting a build folder to Github will update the deployment automatically
+* Netlify deployment set up so commiting a build folder to Github will update the deployment automatically
 
 ## :clipboard: Status & To-Do List
 
 * Status: Working, deployed to Netlify. Unable to convert to SSR. All files pass linting. App passes unit tests.
-* To-Do: About - Redo SSR. Add tests, language translations
+* To-Do: About - Redo SSR. Add parking module, ratp menu 2&3, side menu, Add tests, language translations
 
 ## :clap: Inspiration
 
@@ -107,6 +113,8 @@ getRatpData(query: string): Observable<RatpResponse> {
 * [Mozilla, Link prefetching FAQ](https://developer.mozilla.org/en-US/docs/Web/HTTP/Link_prefetching_FAQ)
 * [Mozilla, X-XSS-Protection](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection)
 * [Website scanner for JavaScript vulnerabilities and security headers](https://snyk.io/test/website-scanner)
+* [Stackoverflow: combine-ngstyle-with-condition-if-else](https://stackoverflow.com/questions/37051496/combine-ngstyle-with-condition-if-else)
+* [Angular Material Dialog: A Complete Example](https://blog.angular-university.io/angular-material-dialog/)
 
 ## :file_folder: License
 
