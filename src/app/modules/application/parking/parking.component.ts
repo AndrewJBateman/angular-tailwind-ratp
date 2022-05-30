@@ -9,7 +9,7 @@ import { parisData } from './paris.data';
 @Component({
   selector: 'app-parking',
   templateUrl: './parking.component.html',
-  styleUrls: ['./parking.component.css'],
+  styleUrls: ['./parking.component.css']
 })
 export class ParkingComponent implements OnInit {
   map: L.Map;
