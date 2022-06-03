@@ -12,17 +12,23 @@ const routes: Routes = [
   {
     path: 'ratp',
     loadChildren: () =>
-      import('./modules/application/ratp/ratp.module').then((mod) => mod.RatpModule),
+      import('./modules/application/ratp/ratp.module').then(
+        (mod) => mod.RatpModule
+      ),
   },
   {
     path: 'parking',
     loadChildren: () =>
-      import('./modules/application/parking/parking.module').then((mod) => mod.ParkingModule),
+      import('./modules/application/parking/parking.module').then(
+        (mod) => mod.ParkingModule
+      ),
   },
   {
     path: 'about',
     loadChildren: () =>
-      import('./modules/common/about/about.module').then((mod) => mod.AboutModule),
+      import('./modules/common/about/about.module').then(
+        (mod) => mod.AboutModule
+      ),
   },
   {
     path: 'contact',
@@ -37,8 +43,8 @@ const routes: Routes = [
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, {
-      initialNavigation: 'enabled',
-    }),
+      initialNavigation: 'enabledBlocking'
+    })
   ],
   exports: [RouterModule],
 })

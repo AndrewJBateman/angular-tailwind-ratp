@@ -4,5 +4,6 @@
   "css.completion.completePropertyWithSemicolon": false,
   "less.lint.unknownAtRules": "ignore",
   "scss.lint.unknownAtRules": "ignore",
-  "css.validate": false
+  "css.validate": false,
+  "typescript.tsdk": "node_modules\\typescript\\lib"
 }
