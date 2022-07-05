@@ -11,10 +11,12 @@
     padding-left: 0 !important;
   }
 
-  nav {
+  .navbar {
     border-bottom: 4px solid #2f4e96;
     background: white;
     height: 4rem;
+    position: relative;
+    z-index: 1000;
   }
 
   .nav-left-icon {
