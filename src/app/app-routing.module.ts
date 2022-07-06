@@ -10,7 +10,7 @@ const routes: Routes = [
     component: HomeComponent,
   },
   {
-    path: 'ratp',
+    path: 'ratp/:id',
     loadChildren: () =>
       import('./modules/application/ratp/ratp.module').then(
         (mod) => mod.RatpModule

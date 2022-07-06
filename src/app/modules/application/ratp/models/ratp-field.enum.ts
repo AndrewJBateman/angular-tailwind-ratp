@@ -1,5 +1,6 @@
 export enum RatpField {
   result = 'result',
   metros = 'metros',
-  rers = 'rers'
+  rers = 'rers',
+  tram = 'tramways'
 }

@@ -17,7 +17,8 @@
       <div *ngFor="let ratp of metroTraffic; let i = index">
         <div class="has-tooltip">
           <span
-            class="p-1 -mt-8 bg-gray-100 rounded shadow-lg tooltip" [ngStyle]="{ color: ratp.slug === 'normal' ? 'green' : '#CC5500' }"
+            class="p-1 -mt-8 bg-gray-100 rounded shadow-lg tooltip"
+            [ngStyle]="{ color: ratp.slug === 'normal' ? 'green' : '#CC5500' }"
             ><p>{{ ratp.message }}</p></span
           >
           <app-ratp-card

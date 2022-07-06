@@ -1,5 +1,5 @@
 export interface RatpTrafficApiResponse {
-  result: { metros: RatpTraffic[]; rers: RatpTraffic[]; tramways: RatpTraffic[] };
+  result: { trafficId: RatpTraffic[]; metros: RatpTraffic[]; rers: RatpTraffic[]; tramways: RatpTraffic[] };
 }
 
 export interface RatpTraffic {
