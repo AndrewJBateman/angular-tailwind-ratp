@@ -21,11 +21,11 @@ export class RatpComponent implements OnInit {
 
   constructor(
     private trafficService: TrafficService,
-    private _Activatedroute: ActivatedRoute
+    private activatedroute: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
-    this._Activatedroute.paramMap.subscribe((params) => {
+    this.activatedroute.paramMap.subscribe((params) => {
       this.id = params.get('id');
     });
     this.getRatpTraffic();
