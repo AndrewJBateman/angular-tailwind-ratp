@@ -44,14 +44,14 @@
 
 ## :signal_strength: Technologies
 
-* [Angular framework v13](https://angular.io/)
-* [@angular/forms v13](https://angular.io/api/forms) used with [PatternValidator](https://angular.io/api/forms/PatternValidator)
+* [Angular framework v14](https://angular.io/)
+* [@angular/forms v14](https://angular.io/api/forms) used with [PatternValidator](https://angular.io/api/forms/PatternValidator)
 * [Reactive Extensions Library for Javascript rxjs v7](https://rxjs.dev/)
 * [Tailwindcss v3](https://tailwindcss.com/) CSS framework
-* [Angular PWA v13](https://angular.io/guide/service-worker-getting-started)
+* [Angular PWA v14](https://angular.io/guide/service-worker-getting-started)
 * [Leaflet v1](https://leafletjs.com/) open-source JavaScript library
 for mobile-friendly interactive maps
-* [Leaflet Marker Cluster](https://github.com/Leaflet/Leaflet.markercluster) Marker Clustering plaugin JS library for interactive maps
+* [Leaflet Marker Cluster](https://github.com/Leaflet/Leaflet.markercluster) Marker Clustering plugin JS library for interactive maps
 
 ## :floppy_disk: Setup
 
