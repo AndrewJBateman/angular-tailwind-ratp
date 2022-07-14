@@ -6,24 +6,26 @@
   <mat-icon>more_vert</mat-icon>
 </button>
 <mat-menu #menu="matMenu">
-  <button
-    class="nav-right nav-link"
-    aria-label="about nav link"
-    mat-menu-item
-    routerLink="/about"
-    routerLinkActive="nav-link-active"
-  >
-    <mat-icon>info_outline</mat-icon>
-    <span>About</span>
-  </button>
-  <button
-    class="nav-right nav-link"
-    aria-label="contact nav link"
-    mat-menu-item
-    routerLink="/contact"
-    routerLinkActive="nav-link-active"
-  >
-    <mat-icon>contact_mail</mat-icon>
-    <span>Contact</span>
-  </button>
+  <div style="width: 150px">
+    <button
+      class="nav-right nav-link dropdown-button"
+      aria-label="about nav link"
+      mat-menu-item
+      routerLink="/about"
+      routerLinkActive="nav-link-active"
+    >
+      <mat-icon>info_outline</mat-icon>
+      <span>About</span>
+    </button>
+    <button
+      class="nav-right nav-link dropdown-button"
+      aria-label="contact nav link"
+      mat-menu-item
+      routerLink="/contact"
+      routerLinkActive="nav-link-active"
+    >
+      <mat-icon>contact_mail</mat-icon>
+      <span>Contact</span>
+    </button>
+  </div>
 </mat-menu>

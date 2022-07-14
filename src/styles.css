@@ -38,6 +38,11 @@
     font-weight: bold;
   }
 
+  .dropdown-button {
+    width: 130px;
+    margin: 0;
+  }
+
   .dropdown:hover .dropdown-menu {
     display: block;
   }
