@@ -28,7 +28,7 @@
 
 * Home page: User post code search will show a list of retail outlets open to the public within the vicinity of the local RATP station. Note, only post codes with RATP stations will show a list (e.g. 75005 Paris has RATP, but 31000 Toulouse has no RATP), otherwise an error message is shown to try a different post code.
 * [Tailwind Responsive Table](https://tailwindcomponents.com/component/responsive-table-1) used to show RATP data
-* RATP page: shows status of metro, bus.. using Tailwind micro-cards
+* RATP page: shows status of metro, rer & tramways using Tailwind micro-cards
 * Parking page: shows location of disabled parking as a cluster of icons+popups on a Leaflet map
 * About and Contact pages give more information on app using Tailwind css cards
 * Website is in French
@@ -46,7 +46,7 @@
 
 * [Angular framework v14](https://angular.io/)
 * [@angular/forms v14](https://angular.io/api/forms) used with [PatternValidator](https://angular.io/api/forms/PatternValidator)
-* [Reactive Extensions Library for Javascript rxjs v7](https://rxjs.dev/)
+* [Reactive Extensions Library for Javascript RxJS v7](https://rxjs.dev/)
 * [Tailwindcss v3](https://tailwindcss.com/) CSS framework
 * [Angular PWA v14](https://angular.io/guide/service-worker-getting-started)
 * [Leaflet v1](https://leafletjs.com/) open-source JavaScript library
