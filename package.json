@@ -26,7 +26,7 @@
     "@angular/service-worker": "^15.0.0",
     "@asymmetrik/ngx-leaflet": "^14.0.1",
     "@asymmetrik/ngx-leaflet-markercluster": "^14.0.1",
-    "@nguniversal/express-engine": "^14.2.0",
+    "@nguniversal/express-engine": "^15.0.0",
     "autoprefixer": "10.4.12",
     "express": "^4.18.1",
     "leaflet": "^1.8.0",
