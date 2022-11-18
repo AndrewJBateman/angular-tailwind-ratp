@@ -44,14 +44,14 @@
 
 ## :signal_strength: Technologies
 
-* [Angular framework v14](https://angular.io/)
-* [@angular/forms v14](https://angular.io/api/forms) used with [PatternValidator](https://angular.io/api/forms/PatternValidator)
+* [Angular framework v15](https://angular.io/)
+* [@angular/forms v15](https://angular.io/api/forms) used with [PatternValidator](https://angular.io/api/forms/PatternValidator)
 * [Reactive Extensions Library for Javascript RxJS v7](https://rxjs.dev/)
 * [Tailwindcss v3](https://tailwindcss.com/) CSS framework
-* [Angular PWA v14](https://angular.io/guide/service-worker-getting-started)
+* [Angular PWA v15](https://angular.io/guide/service-worker-getting-started)
 * [Leaflet v1](https://leafletjs.com/) open-source JavaScript library
 for mobile-friendly interactive maps
-* [Leaflet Marker Cluster](https://github.com/Leaflet/Leaflet.markercluster) Marker Clustering plugin JS library for interactive maps
+* [Leaflet Marker Cluster v1](https://github.com/Leaflet/Leaflet.markercluster) Marker Clustering plugin JS library for interactive maps
 
 ## :floppy_disk: Setup
 
@@ -89,7 +89,7 @@ getRatpData(query: string): Observable<RatpResponse> {
 
 * The RATP & Github APIs do not require an API key
 * Lazy-loading of all pages except 'Home'
-* Http headers added due to Content Security Policy for prefetch-src, X Content Type Options, X Frame Options, Content Security Policy
+* HTTP headers added due to Content Security Policy for prefetch-src, X Content Type Options, X Frame Options, Content Security Policy
 * Postcode search form with validation and error messages checks that only a 5-number postcode is entered
 * Tailwind build for production css purge results in a very small styles bundle (8.16kB latest)
 * Progressive Web App (PWA)
