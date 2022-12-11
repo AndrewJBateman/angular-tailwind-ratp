@@ -1,7 +1,7 @@
 module.exports = {
-  prefix: '',
-  content: ['./src/**/*.{html,ts}'],
-  darkMode: 'media',
+  prefix: "",
+  content: ["./src/**/*.{html,ts}"],
+  darkMode: "media",
   theme: {
     extend: {},
   },
@@ -9,4 +9,4 @@ module.exports = {
     extend: {},
   },
   plugins: [],
-}
+};

@@ -6,7 +6,9 @@
       L{{ ratp.line }}
       <span
         class="inline px-2 font-mono text-sm rounded-full animate-pulse"
-        [ngStyle]="{ backgroundColor: ratp.slug === 'normal' ? 'lightgreen' : 'orange' }"
+        [ngStyle]="{
+          backgroundColor: ratp.slug === 'normal' ? 'lightgreen' : 'orange'
+        }"
         >{{ ratp.slug }}</span
       >
     </p>
