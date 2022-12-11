@@ -19,7 +19,7 @@ export class CommerceService {
   constructor(private http: HttpClient) {}
 
   getRatpCommerceData(query: string): Observable<RatpResponse> {
-    const userSearchUrl = `${baseUrl}dataset=liste-des-commerces-de-proximite-agrees-ratp&q=${query}&rows=1052&sort=-code_postal&facet=tco_libelle&facet=code_postal`;
+    const userSearchUrl = `${baseUrl}dataset=commerces-de-proximite-agrees-ratp&q=${query}&rows=1052&sort=-code_postal&facet=tco_libelle&facet=code_postal`;
     this.ratpCommerceData = this.http.get<RatpResponse>(userSearchUrl).pipe(
       take(1),
       catchError((err) => {
@@ -30,12 +30,12 @@ export class CommerceService {
   }
 
   getRatpTrafficData(): Observable<any> {
-    return this.ratpTrafficData = this.http.get<any>(trafficSearchUrl).pipe(
+    return (this.ratpTrafficData = this.http.get<any>(trafficSearchUrl).pipe(
       tap((response: any) => console.log('traffic response: ', response)),
       take(1),
       catchError((err) => {
         throw 'error in getting API data. Details: ' + err;
       })
-    );
+    ));
   }
 }
