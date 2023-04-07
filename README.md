@@ -11,17 +11,17 @@
 ## :page_facing_up: Table of contents
 
 * [:zap: Angular Tailwind RATP](#zap-angular-tailwind-ratp)
-  * [:page_facing_up: Table of contents](#page_facing_up-table-of-contents)
+  * [:page\_facing\_up: Table of contents](#page_facing_up-table-of-contents)
   * [:books: General info](#books-general-info)
   * [:camera: Screenshots](#camera-screenshots)
-  * [:signal_strength: Technologies](#signal_strength-technologies)
-  * [:floppy_disk: Setup](#floppy_disk-setup)
+  * [:signal\_strength: Technologies](#signal_strength-technologies)
+  * [:floppy\_disk: Setup](#floppy_disk-setup)
   * [:wrench: Testing](#wrench-testing)
   * [:computer: Code Examples](#computer-code-examples)
   * [:cool: Features](#cool-features)
-  * [:clipboard: Status & To-Do List](#clipboard-status--to-do-list)
+  * [:clipboard: Status \& To-Do List](#clipboard-status--to-do-list)
   * [:clap: Inspiration](#clap-inspiration)
-  * [:file_folder: License](#file_folder-license)
+  * [:file\_folder: License](#file_folder-license)
   * [:envelope: Contact](#envelope-contact)
 
 ## :books: General info
@@ -44,11 +44,11 @@
 
 ## :signal_strength: Technologies
 
-* [Angular framework v15](https://angular.io/)
-* [@angular/forms v15](https://angular.io/api/forms) used with [PatternValidator](https://angular.io/api/forms/PatternValidator)
+* [Angular framework v16](https://angular.io/)
+* [@angular/forms v16](https://angular.io/api/forms) used with [PatternValidator](https://angular.io/api/forms/PatternValidator)
 * [Reactive Extensions Library for Javascript RxJS v7](https://rxjs.dev/)
 * [Tailwindcss v3](https://tailwindcss.com/) CSS framework
-* [Angular PWA v15](https://angular.io/guide/service-worker-getting-started)
+* [Angular PWA v16](https://angular.io/guide/service-worker-getting-started)
 * [Leaflet v1](https://leafletjs.com/) open-source JavaScript library
 for mobile-friendly interactive maps
 * [Leaflet Marker Cluster v1](https://github.com/Leaflet/Leaflet.markercluster) Marker Clustering plugin JS library for interactive maps
@@ -63,7 +63,7 @@ for mobile-friendly interactive maps
 
 ## :wrench: Testing
 
-* Run `ng test` to run Jasmine unit tests via [Karma](https://karma-runner.github.io). Currrently 9/9 tests pass
+* No tests set up
 
 ## :computer: Code Examples
 
