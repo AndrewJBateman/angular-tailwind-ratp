@@ -55,11 +55,12 @@ for mobile-friendly interactive maps
 
 ## :floppy_disk: Setup
 
-* Run `npm i` to install dependencies.
-* Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+* Run `npm i` to install dependencies
+* No API keys required
+* Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files
 * Run `npm run build` for a production build with css purging. Add defer to index.html css link
 * Run `http-server -p 8080 -c-1 dist/angular-tailwind-ratp` to view build on an apple/android phone or simulator (pick 2nd http address supplied)
-* The build files will be stored in the `dist/angular-tailwind-ratp` directory.
+* The build files will be stored in the `dist/angular-tailwind-ratp` directory
 
 ## :wrench: Testing
 
@@ -122,4 +123,4 @@ getRatpData(query: string): Observable<RatpResponse> {
 
 ## :envelope: Contact
 
-* Repo created by [ABateman](https://github.com/AndrewJBateman), email: gomezbateman@yahoo.com
+* Repo created by [ABateman](https://github.com/AndrewJBateman), email: `gomezbateman@yahoo.com`
