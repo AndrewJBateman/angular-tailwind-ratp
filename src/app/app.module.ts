@@ -3,9 +3,9 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
-import { MatMenuModule } from "@angular/material/menu";
-import { MatIconModule } from "@angular/material/icon";
-import { MatButtonModule } from "@angular/material/button";
+import { MatMenuModule } from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -21,29 +21,29 @@ import { DropdownComponent } from './modules/common/nav/dropdowns/dropdown/dropd
 import { RatpDropdownComponent } from './modules/common/nav/dropdowns/ratp-dropdown/ratp-dropdown.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    NavComponent,
-    HomeComponent,
-    NotFoundComponent,
-    SvgInfoComponent,
-    DropdownComponent,
-    RatpDropdownComponent,
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    FormsModule,
-    ServiceWorkerModule.register('ngsw-worker.js', {
-      enabled: environment.production,
-    }),
-    BrowserAnimationsModule,
-    MatMenuModule,
-    MatIconModule,
-    MatButtonModule,
-  ],
-  providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }],
-  bootstrap: [AppComponent],
+	declarations: [
+		AppComponent,
+		NavComponent,
+		HomeComponent,
+		NotFoundComponent,
+		SvgInfoComponent,
+		DropdownComponent,
+		RatpDropdownComponent,
+	],
+	imports: [
+		BrowserModule,
+		AppRoutingModule,
+		HttpClientModule,
+		FormsModule,
+		ServiceWorkerModule.register('ngsw-worker.js', {
+			enabled: environment.production,
+		}),
+		BrowserAnimationsModule,
+		MatMenuModule,
+		MatIconModule,
+		MatButtonModule,
+	],
+	providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }],
+	bootstrap: [AppComponent],
 })
 export class AppModule {}

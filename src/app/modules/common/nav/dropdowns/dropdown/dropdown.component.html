@@ -1,31 +1,28 @@
 <button
-  mat-icon-button
-  [matMenuTriggerFor]="menu"
-  aria-label="Menu icon button"
->
-  <mat-icon>more_vert</mat-icon>
+	mat-icon-button
+	[matMenuTriggerFor]="menu"
+	aria-label="Menu icon button">
+	<mat-icon>more_vert</mat-icon>
 </button>
 <mat-menu #menu="matMenu">
-  <div style="width: 150px">
-    <button
-      class="nav-right nav-link dropdown-button"
-      aria-label="about nav link"
-      mat-menu-item
-      routerLink="/about"
-      routerLinkActive="nav-link-active"
-    >
-      <mat-icon>info_outline</mat-icon>
-      <span>A Propos</span>
-    </button>
-    <button
-      class="nav-right nav-link dropdown-button"
-      aria-label="contact nav link"
-      mat-menu-item
-      routerLink="/contact"
-      routerLinkActive="nav-link-active"
-    >
-      <mat-icon>contact_mail</mat-icon>
-      <span>Contact</span>
-    </button>
-  </div>
+	<div style="width: 150px">
+		<button
+			class="nav-right nav-link dropdown-button"
+			aria-label="about nav link"
+			mat-menu-item
+			routerLink="/about"
+			routerLinkActive="nav-link-active">
+			<mat-icon>info_outline</mat-icon>
+			<span>A Propos</span>
+		</button>
+		<button
+			class="nav-right nav-link dropdown-button"
+			aria-label="contact nav link"
+			mat-menu-item
+			routerLink="/contact"
+			routerLinkActive="nav-link-active">
+			<mat-icon>contact_mail</mat-icon>
+			<span>Contact</span>
+		</button>
+	</div>
 </mat-menu>

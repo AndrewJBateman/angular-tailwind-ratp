@@ -5,7 +5,7 @@ import { RatpComponent } from './ratp.component';
 const routes: Routes = [{ path: '', component: RatpComponent }];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+	imports: [RouterModule.forChild(routes)],
+	exports: [RouterModule],
 })
-export class RatpRoutingModule { }
+export class RatpRoutingModule {}

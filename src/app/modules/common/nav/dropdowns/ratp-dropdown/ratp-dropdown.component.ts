@@ -1,14 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-ratp-dropdown',
-  templateUrl: './ratp-dropdown.component.html'
+	selector: 'app-ratp-dropdown',
+	templateUrl: './ratp-dropdown.component.html',
 })
-export class RatpDropdownComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-}
+export class RatpDropdownComponent {}

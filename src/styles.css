@@ -3,100 +3,100 @@
 @tailwind utilities;
 
 @layer components {
-  main {
-    padding-top: 0;
-    padding-left: 0 !important;
-  }
+	main {
+		padding-top: 0;
+		padding-left: 0 !important;
+	}
 
-  .navbar {
-    border-bottom: 4px solid #2f4e96;
-    background: white;
-    height: 4rem;
-    position: relative;
-    z-index: 1000;
-  }
+	.navbar {
+		border-bottom: 4px solid #2f4e96;
+		background: white;
+		height: 4rem;
+		position: relative;
+		z-index: 1000;
+	}
 
-  .nav-left-icon {
-    height: 50px;
-    width: 50px;
-  }
+	.nav-left-icon {
+		height: 50px;
+		width: 50px;
+	}
 
-  .nav-link {
-    color: #0d7765 !important;
-    padding: 8px;
-  }
+	.nav-link {
+		color: #0d7765 !important;
+		padding: 8px;
+	}
 
-  .nav-right {
-    @apply ml-2 rounded hover:bg-gray-50;
-  }
+	.nav-right {
+		@apply ml-2 rounded hover:bg-gray-50;
+	}
 
-  .nav-link-active {
-    color: #2f4e96 !important;
-    font-weight: bold;
-  }
+	.nav-link-active {
+		color: #2f4e96 !important;
+		font-weight: bold;
+	}
 
-  .dropdown-button {
-    width: 130px;
-    margin: 0;
-  }
+	.dropdown-button {
+		width: 130px;
+		margin: 0;
+	}
 
-  .dropdown:hover .dropdown-menu {
-    display: block;
-  }
+	.dropdown:hover .dropdown-menu {
+		display: block;
+	}
 
-  .ratp-green {
-    background-color: #00aa91;
-  }
+	.ratp-green {
+		background-color: #00aa91;
+	}
 
-  .search-bar .column-header {
-    background-color: rgb(245 243 243);
+	.search-bar .column-header {
+		background-color: rgb(245 243 243);
 
-    @apply shadow-xl;
-  }
+		@apply shadow-xl;
+	}
 
-  .input-form {
-    /* background-color: rgb(245 243 243); */
-  }
+	.input-form {
+		/* background-color: rgb(245 243 243); */
+	}
 
-  .info-card {
-    background-color: rgb(245 243 243);
+	.info-card {
+		background-color: rgb(245 243 243);
 
-    @apply rounded-lg;
-  }
+		@apply rounded-lg;
+	}
 
-  .table-cell {
-    background-color: rgb(245 243 243);
+	.table-cell {
+		background-color: rgb(245 243 243);
 
-    @apply px-2;
-  }
+		@apply px-2;
+	}
 
-  .table-text-left {
-    @apply font-bold text-blue-900;
-  }
+	.table-text-left {
+		@apply font-bold text-blue-900;
+	}
 
-  .table-text-right {
-    @apply text-xs text-gray-600;
-  }
+	.table-text-right {
+		@apply text-xs text-gray-600;
+	}
 
-  .column-header {
-    @apply p-2 bg-blue-900;
-  }
+	.column-header {
+		@apply p-2 bg-blue-900;
+	}
 
-  .title {
-    @apply text-lg font-semibold text-blue-800;
-  }
+	.title {
+		@apply text-lg font-semibold text-blue-800;
+	}
 
-  .emphasis {
-    @apply italic text-blue-800;
-  }
+	.emphasis {
+		@apply italic text-blue-800;
+	}
 }
 
 html,
 body {
-  height: 100%;
+	height: 100%;
 }
 
 body {
-  margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+	margin: 0;
+	font-family: Roboto, 'Helvetica Neue', sans-serif;
 }

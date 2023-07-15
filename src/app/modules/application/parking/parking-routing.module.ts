@@ -5,7 +5,7 @@ import { ParkingComponent } from './parking.component';
 const routes: Routes = [{ path: '', component: ParkingComponent }];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+	imports: [RouterModule.forChild(routes)],
+	exports: [RouterModule],
 })
-export class ParkingRoutingModule { }
+export class ParkingRoutingModule {}

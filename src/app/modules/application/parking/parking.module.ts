@@ -16,18 +16,18 @@ import { ParkingComponent } from './parking.component';
 import { ParkingDialogComponent } from './components/parking-dialog/parking-dialog.component';
 
 @NgModule({
-  declarations: [ParkingComponent, ParkingDialogComponent],
-  imports: [
-    CommonModule,
-    ParkingRoutingModule,
-    LeafletModule,
-    LeafletMarkerClusterModule,
-    MatButtonModule,
-    MatIconModule,
-    MatDialogModule,
-    MatTooltipModule,
-  ],
-  exports: [ParkingComponent],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+	declarations: [ParkingComponent, ParkingDialogComponent],
+	imports: [
+		CommonModule,
+		ParkingRoutingModule,
+		LeafletModule,
+		LeafletMarkerClusterModule,
+		MatButtonModule,
+		MatIconModule,
+		MatDialogModule,
+		MatTooltipModule,
+	],
+	exports: [ParkingComponent],
+	schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class ParkingModule {}

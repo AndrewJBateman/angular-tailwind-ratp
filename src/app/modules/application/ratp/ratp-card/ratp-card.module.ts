@@ -3,14 +3,9 @@ import { CommonModule } from '@angular/common';
 
 import { RatpCardComponent } from './ratp-card.component';
 
-
 @NgModule({
-  declarations: [
-    RatpCardComponent
-  ],
-  imports: [
-    CommonModule
-  ],
-  exports: [RatpCardComponent]
+	declarations: [RatpCardComponent],
+	imports: [CommonModule],
+	exports: [RatpCardComponent],
 })
-export class RatpCardModule { }
+export class RatpCardModule {}

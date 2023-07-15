@@ -1,64 +1,66 @@
 <head>
-  <meta name="description" content="Shows details of app" />
-  <meta />
-  <link
-    rel="prefetch"
-    as="document"
-    src="https://github.com/AndrewJBateman/angular-tailwind-ratp"
-    Set-Cookie:
-    CookieName="CookieValue;"
-    SameSite="Lax;"
-  />
+	<meta name="description" content="Shows details of app" />
+	<meta />
+	<link
+		rel="prefetch"
+		as="document"
+		src="https://github.com/AndrewJBateman/angular-tailwind-ratp"
+		Set-Cookie:
+		CookieName="CookieValue;"
+		SameSite="Lax;" />
 </head>
 <div class="min-h-screen min-w-screen ratp-green" id="leaflet-container">
-  <div class="flex justify-center w-full h-screen mx-auto">
-    <div
-      id="map"
-      leaflet
-      [leafletOptions]="options"
-      [(leafletZoom)]="zoom"
-      [leafletCenter]="center"
-      [leafletLayers]="layers"
-      [leafletMarkerCluster]="markerClusterData"
-      [leafletMarkerClusterOptions]="markerClusterOptions"
-      (leafletMapReady)="onMapReady($event)"
-    >
-      <div class="controls">
-        <div
-          id="zoom-in"
-          class="control"
-          (click)="zoomIn()"
-          [class.disabled]="zoom >= zoomMax"
-          matTooltip="Zoom avant"
-        >
-          <mat-icon>zoom_in</mat-icon>
-        </div>
-        <div
-          id="zoom-out"
-          class="control"
-          (click)="zoomOut()"
-          [class.disabled]="zoom <= zoomMin"
-          matTooltip="Zoom arrière"
-        >
-          <mat-icon>zoom_out</mat-icon>
-        </div>
-        <div
-          id="layers"
-          class="control"
-          (click)="nextLayer()"
-          matTooltip="Cartes"
-        >
-          <mat-icon>layers</mat-icon>
-        </div>
-        <div
-          id="info"
-          class="control"
-          (click)="popupInfo()"
-          matTooltip="Information"
-        >
-          <mat-icon>info</mat-icon>
-        </div>
-      </div>
-    </div>
-  </div>
+	<div class="flex justify-center w-full h-screen mx-auto">
+		<div
+			id="map"
+			leaflet
+			[leafletOptions]="options"
+			[(leafletZoom)]="zoom"
+			[leafletCenter]="center"
+			[leafletLayers]="layers"
+			[leafletMarkerCluster]="markerClusterData"
+			[leafletMarkerClusterOptions]="markerClusterOptions"
+			(leafletMapReady)="onMapReady($event)">
+			<div class="controls">
+				<div
+					id="zoom-in"
+					class="control"
+					(onClick)="zoomIn()"
+					(onKeyUp)="zoomIn()"
+					role="button"
+					[class.disabled]="zoom >= zoomMax"
+					matTooltip="Zoom avant">
+					<mat-icon>zoom_in</mat-icon>
+				</div>
+				<div
+					id="zoom-out"
+					class="control"
+					(onClick)="zoomOut()"
+					(onKeyUp)="zoomOut()"
+					role="button"
+					[class.disabled]="zoom <= zoomMin"
+					matTooltip="Zoom arrière">
+					<mat-icon>zoom_out</mat-icon>
+				</div>
+				<div
+					id="layers"
+					class="control"
+					(onClick)="nextLayer()"
+					(onKeyUp)="nextLayer()"
+					role="button"
+					matTooltip="Cartes">
+					<mat-icon>layers</mat-icon>
+				</div>
+				<div
+					id="info"
+					class="control"
+					(onClick)="popupInfo()"
+					(onKeyUp)="popupInfo()"
+					role="button"
+					matTooltip="Information">
+					<mat-icon>info</mat-icon>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>

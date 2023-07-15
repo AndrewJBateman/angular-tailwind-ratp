@@ -7,8 +7,8 @@ import { SpinnerComponent } from '../../common/spinner/spinner.component';
 import { RatpCardModule } from './ratp-card/ratp-card.module';
 
 @NgModule({
-  imports: [CommonModule, RatpRoutingModule, RatpCardModule],
-  exports: [RatpComponent],
-  declarations: [RatpComponent, SpinnerComponent],
+	imports: [CommonModule, RatpRoutingModule, RatpCardModule],
+	exports: [RatpComponent],
+	declarations: [RatpComponent, SpinnerComponent],
 })
 export class RatpModule {}
