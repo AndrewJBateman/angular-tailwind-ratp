@@ -21,7 +21,7 @@ export class HomeComponent {
 
 	// API data variables
 	ratpData: Record[] = [];
-	postalCode = 0;
+	postalCode = '';
 	ville = '';
 	dataLength = 0;
 	date = '';
@@ -37,12 +37,13 @@ export class HomeComponent {
 		this.commerceService
 			.getRatpCommerceData(postCode)
 			.subscribe((data: RatpResponse) => {
+				this.postalCode = data.parameters.q;
 				this.ratpData = data.records;
 				this.initialState = false;
 				if (this.ratpData.length > 0) {
 					this.dataToShow = true;
-					this.postalCode = this.ratpData[0].fields.code_postal;
-					this.ville = this.ratpData[0].fields.ville;
+
+					this.ville = this.ratpData[0].fields.dea_commune_livraison;
 					this.dataLength = this.ratpData.length;
 					this.date = this.ratpData[0].record_timestamp;
 				} else {
@@ -51,8 +52,8 @@ export class HomeComponent {
 			});
 	}
 
-	trackByFn(index: number, data: any): number {
-		return data;
+	trackByFn(index: number, data: Record): string {
+		return data.recordid;
 	}
 
 	clearSearch(): void {

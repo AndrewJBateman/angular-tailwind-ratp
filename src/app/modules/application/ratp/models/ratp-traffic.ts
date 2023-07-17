@@ -5,6 +5,11 @@ export interface RatpTrafficApiResponse {
 		rers: RatpTraffic[];
 		tramways: RatpTraffic[];
 	};
+	_metadata: {
+		call: string;
+		data: string;
+		version: number;
+	};
 }
 
 export interface RatpTraffic {

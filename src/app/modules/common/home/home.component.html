@@ -124,14 +124,14 @@
 						<tr
 							*ngFor="let data of ratpData; trackBy: trackByFn"
 							class="py-10 border-b border-gray-200">
-							<td class="table-cell">{{ data.fields.tco_libelle }}</td>
+							<td class="table-cell">{{ data.fields.dea_nom_commerce }}</td>
 							<td class="table-cell">
 								{{ data?.fields?.dea_numero_rue_livraison_dea_rue_livraison }}
 							</td>
 							<td
 								class="table-cell"
-								*ngIf="data.fields.dea_fermeture; else noData">
-								{{ data.fields.dea_fermeture }}
+								*ngIf="data.fields.dea_jour_fermeture; else noData">
+								{{ data.fields.dea_jour_fermeture }}
 							</td>
 							<ng-template #noData>
 								<td class="table-cell">Pas de Données</td>
