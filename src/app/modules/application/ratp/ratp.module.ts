@@ -11,4 +11,4 @@ import { RatpCardModule } from './ratp-card/ratp-card.module';
 	exports: [RatpComponent],
 	declarations: [RatpComponent, SpinnerComponent],
 })
-export class RatpModule {}
+export default class RatpModule {}

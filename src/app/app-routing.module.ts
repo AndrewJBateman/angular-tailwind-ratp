@@ -11,31 +11,19 @@ const routes: Routes = [
 	},
 	{
 		path: 'ratp/:id',
-		loadChildren: () =>
-			import('./modules/application/ratp/ratp.module').then(
-				mod => mod.RatpModule
-			),
+		loadChildren: () => import('./modules/application/ratp/ratp.module'),
 	},
 	{
 		path: 'parking',
-		loadChildren: () =>
-			import('./modules/application/parking/parking.module').then(
-				mod => mod.ParkingModule
-			),
+		loadChildren: () => import('./modules/application/parking/parking.module'),
 	},
 	{
 		path: 'about',
-		loadChildren: () =>
-			import('./modules/common/about/about.module').then(
-				mod => mod.AboutModule
-			),
+		loadChildren: () => import('./modules/common/about/about.module'),
 	},
 	{
 		path: 'contact',
-		loadChildren: () =>
-			import('./modules/common/contact/contact.module').then(
-				mod => mod.ContactModule
-			),
+		loadChildren: () => import('./modules/common/contact/contact.module'),
 	},
 	{ path: '**', component: NotFoundComponent },
 ];

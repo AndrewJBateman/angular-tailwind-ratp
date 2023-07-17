@@ -30,4 +30,4 @@ import { ParkingDialogComponent } from './components/parking-dialog/parking-dial
 	exports: [ParkingComponent],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class ParkingModule {}
+export default class ParkingModule {}
