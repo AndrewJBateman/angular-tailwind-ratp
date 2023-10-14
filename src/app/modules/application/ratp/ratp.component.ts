@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 
-import { RatpTraffic } from './models/ratp-traffic';
+import { RatpTraffic, RatpTrafficApiResponse } from './models/ratp-traffic';
 import { TrafficService } from './services/traffic.service';
 
 @Component({
@@ -11,7 +11,7 @@ import { TrafficService } from './services/traffic.service';
 	styleUrls: ['./ratp.component.css'],
 })
 export class RatpComponent implements OnInit {
-	public ratpTraffic$: Observable<any>;
+	public ratpTraffic$: Observable<RatpTrafficApiResponse>;
 	public traffic: RatpTraffic[];
 	public id: string | null;
 	public trafficArray: RatpTraffic[] = [];
@@ -32,11 +32,11 @@ export class RatpComponent implements OnInit {
 		this.loading = false;
 	}
 
-	private getRatpTraffic = () => {
-		this.ratpTraffic$ = this.trafficService.getRatpTrafficData();
+	private getRatpTraffic = async () => {
+		this.ratpTraffic$ = await this.trafficService.getRatpTrafficData();
 	};
 
-	onOpenCardDetail = () => {
-		console.log('clicked');
-	};
+	// onOpenCardDetail = () => {
+	// 	console.log('clicked');
+	// };
 }

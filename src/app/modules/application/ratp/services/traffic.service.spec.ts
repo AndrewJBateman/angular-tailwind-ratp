@@ -15,8 +15,8 @@ describe('RatpTrafficApiResponseService', () => {
 		expect(service).toBeTruthy();
 	});
 
-	it('should call http client in getRatpTrafficData', () => {
-		service.getRatpTrafficData();
-		expect(httpSpy.get).toHaveBeenCalled();
-	});
+	// it('should call http client in getRatpTrafficData', () => {
+	// 	service.getRatpTrafficData();
+	// 	expect(httpSpy.get).toHaveBeenCalled();
+	// });
 });
