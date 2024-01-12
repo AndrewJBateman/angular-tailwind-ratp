@@ -78,19 +78,19 @@
 				"serve": {
 					"builder": "@angular-devkit/build-angular:dev-server",
 					"configurations": {
-						"production": {
-							"browserTarget": "angular-tailwind-ratp:build:production"
+            "production": {
+              "buildTarget": "angular-tailwind-ratp:build:production"
 						},
-						"development": {
-							"browserTarget": "angular-tailwind-ratp:build:development"
+            "development": {
+              "buildTarget": "angular-tailwind-ratp:build:development"
 						}
 					},
 					"defaultConfiguration": "development"
 				},
 				"extract-i18n": {
 					"builder": "@angular-devkit/build-angular:extract-i18n",
-					"options": {
-						"browserTarget": "angular-tailwind-ratp:build"
+          "options": {
+            "buildTarget": "angular-tailwind-ratp:build"
 					}
 				},
 				"test": {
