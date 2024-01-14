@@ -1,3 +1,20 @@
+/**
+ * RatpComponent class represents a component in an Angular application that displays RATP traffic information.
+ * It implements the OnInit interface to handle initialization logic.
+ * The component has the following properties:
+ * - ratpTraffic$: An Observable of type RatpTrafficApiResponse that holds the RATP traffic data.
+ * - traffic: An array of RatpTraffic objects that represents the traffic information.
+ * - id: A string or null value that holds the ID parameter from the activated route.
+ * - trafficArray: An array of RatpTraffic objects used to store the traffic data.
+ * - loading: A boolean flag indicating whether the component is in a loading state.
+ * - defaultRatpMessage: A string representing the default message for normal traffic.
+ *
+ * The RatpComponent class has the following methods:
+ * - ngOnInit(): A method that is called when the component is initialized. It subscribes to the paramMap of the activated route to get the ID parameter,
+ *   calls the getRatpTraffic method, and sets the loading flag to false.
+ * - getRatpTraffic(): An async method that calls the getRatpTrafficData method of the TrafficService to fetch the RATP traffic data and assigns it to the ratpTraffic$ property.
+ * - trackBySlug(index: string, ratp: RatpTraffic): A method used as a trackBy function for ngFor directive to track the RatpTraffic objects by their line property.
+ */
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
@@ -36,7 +53,7 @@ export class RatpComponent implements OnInit {
 		this.ratpTraffic$ = await this.trafficService.getRatpTrafficData();
 	};
 
-	// onOpenCardDetail = () => {
-	// 	console.log('clicked');
-	// };
+	public trackByLine(index: string, ratp: RatpTraffic) {
+		return ratp.line;
+	}
 }
