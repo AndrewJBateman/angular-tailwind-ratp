@@ -1,3 +1,18 @@
+/**
+ * Represents the HomeComponent class.
+ *
+ * This component is responsible for handling the home page functionality.
+ * It includes methods for submitting a form, searching data, clearing the search, and tracking data.
+ * The component also manages status variables for displaying data, loading indicators, and form submission.
+ * It interacts with the CommerceService to retrieve data from the API.
+ *
+ * @constructor
+ * Creates an instance of HomeComponent.
+ *
+ * @param {CommerceService} commerceService - The service for retrieving data from the API.
+ */
+import { catchError } from 'rxjs/operators';
+import { throwError } from 'rxjs';
 import { Component, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
@@ -18,6 +33,7 @@ export class HomeComponent {
 	initialState = true;
 	dataToShow = false;
 	displayCleared = false;
+	showLoadingIndicator = false;
 
 	// API data variables
 	ratpData: Record[] = [];
@@ -34,8 +50,21 @@ export class HomeComponent {
 	}
 
 	onSearchData(postCode: string): void {
+		// Reset dataToShow & displayCleared variables. Set showLoadingIndicator to true
+		this.dataToShow = false;
+		this.displayCleared = false;
+		this.showLoadingIndicator = true;
+
 		this.commerceService
 			.getRatpCommerceData(postCode)
+			.pipe(
+				catchError(err => {
+					return throwError(
+						() =>
+							`There was a problem fetching data from the RATP API: ${err.error.errors.toString()}`
+					);
+				})
+			)
 			.subscribe((data: RatpResponse) => {
 				this.postalCode = data.parameters.q;
 				this.ratpData = data.records;
@@ -49,6 +78,7 @@ export class HomeComponent {
 				} else {
 					this.dataToShow = false;
 				}
+				this.showLoadingIndicator = false; // Hide loading indicator
 			});
 	}
 
@@ -59,5 +89,13 @@ export class HomeComponent {
 	clearSearch(): void {
 		this.displayCleared = true;
 		this.formSubmitted = false;
+		this.form.reset();
+		this.initialState = true;
+		this.dataToShow = false;
+		this.ratpData = [];
+		this.postalCode = '';
+		this.ville = '';
+		this.dataLength = 0;
+		this.date = '';
 	}
 }

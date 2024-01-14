@@ -27,6 +27,7 @@ describe('HomeComponent', () => {
 		component = fixture.componentInstance;
 	});
 
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	it('test form submit', fakeAsync((postCodeSearch: NgForm) => {
 		fixture.detectChanges();
 		tick();

@@ -1,11 +1,13 @@
+<!--This HTML template includes a search bar, error checking, and displays data from an API
+  in a table format. The page layout is responsive and uses various CSS classes for styling.
+  The code snippet is not associated with a specific class, function, or method.-->
 <head>
 	<meta
 		name="description"
 		content="Home page shows commercial establishments near to RATP stations" />
-	X-Frame-Options="SAMEORIGIN"
 </head>
 
-<div class="min-h-screen min-w-screen ratp-green">
+<body class="min-h-screen min-w-screen ratp-green">
 	<div class="w-full px-4 py-4">
 		<!--search bar-->
 		<form
@@ -22,12 +24,12 @@
 							id="search"
 							name="search"
 							#name="ngModel"
-							class="pl-2 leading-tight border-none outline-none input-form form-control focus:"
+							class="pl-2 leading-tight border-none outline-none input-form form-control focus:outline-none"
 							required
 							ngModel
 							type="text"
 							placeholder="tapez le code postal"
-							aria-label="Enter postcode"
+							aria-label="Entrez le code postal"
 							minlength="5"
 							maxlength="5"
 							pattern="[0-9]*" />
@@ -49,97 +51,103 @@
 		</form>
 
 		<!--error-checking-->
-		<div
-			class="max-w-xs pt-2"
-			*ngIf="name.invalid && (name.dirty || name.touched)">
-			<div class="rounded-lg shadow-xl info-card">
-				<div class="p-1 pl-2">
-					<div class="font-bold text-red-600">
-						<div *ngIf="name.errors">
-							Un code postal de 5 chiffres est requis
+		@if (name.invalid && (name.dirty || name.touched)) {
+			<div class="max-w-xs pt-2">
+				<div class="rounded-lg shadow-xl info-card">
+					<div class="p-1 pl-2">
+						<div class="font-bold text-red-600">
+							@if (name.errors) {
+								<div>Un code postal de 5 chiffres est requis</div>
+							}
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
+		}
 
 		<!--Show if no data from API - some postcodes have no RATP commerce-->
-		<div class="max-w-xs" *ngIf="!dataToShow && !initialState">
-			<div class="font-bold text-red-600 bg-white rounded-lg shadow-xl">
-				<div class="p-1">
-					<p>Aucune RATP donnée à afficher - essayez un autre code postal</p>
-				</div>
-			</div>
-		</div>
-
-		<!--show table of data, if there is data-->
-		<div *ngIf="dataToShow">
-			<!--summary panel-->
-			<div class="max-w-xs rounded">
-				<div class="info-card">
+		@if (!dataToShow && !initialState) {
+			<div class="max-w-xs">
+				<div class="font-bold text-red-600 bg-white rounded-lg shadow-xl">
 					<div class="p-1">
-						<table class="my-2 text-xs">
-							<tbody>
-								<tr>
-									<td class="table-cell">
-										<span class="table-text-left">Code Postal Recherché:</span>
-									</td>
-									<td class="table-text-right">{{ postalCode }}</td>
-								</tr>
-								<tr>
-									<td class="table-cell">
-										<span class="table-text-left">Ville:</span>
-									</td>
-									<td class="table-text-right">{{ ville }}</td>
-								</tr>
-								<tr>
-									<td class="table-cell">
-										<span class="table-text-left">Nombre d'Eléments</span>
-									</td>
-									<td class="table-text-right">{{ dataLength }}</td>
-								</tr>
-								<tr>
-									<td class="table-cell">
-										<span class="table-text-left">Mise à Jour</span>
-									</td>
-									<td class="table-text-right">{{ date | date }}</td>
-								</tr>
-							</tbody>
-						</table>
+						<p>Aucune RATP donnée à afficher - essayez un autre code postal</p>
 					</div>
 				</div>
 			</div>
+		}
 
-			<!--API data table-->
-			<div class="mt-6 overflow-x-auto shadow" *ngIf="dataToShow">
-				<table class="w-full border-collapse rounded-lg table-auto">
-					<thead>
-						<tr class="font-bold text-left text-white rounded-lg">
-							<th class="column-header">Nom</th>
-							<th class="column-header">Adresse</th>
-							<th class="column-header">Ferme</th>
-						</tr>
-					</thead>
-					<tbody class="text-sm font-normal text-gray-700 bg-white">
-						<tr
-							*ngFor="let data of ratpData; trackBy: trackByFn"
-							class="py-10 border-b border-gray-200">
-							<td class="table-cell">{{ data.fields.dea_nom_commerce }}</td>
-							<td class="table-cell">
-								{{ data?.fields?.dea_numero_rue_livraison_dea_rue_livraison }}
-							</td>
-							<td
-								class="table-cell"
-								*ngIf="data.fields.dea_jour_fermeture; else noData">
-								{{ data.fields.dea_jour_fermeture }}
-							</td>
-							<ng-template #noData>
-								<td class="table-cell">Pas de Données</td>
-							</ng-template>
-						</tr>
-					</tbody>
-				</table>
+		<!--show table of data, if there is data-->
+		@if (dataToShow) {
+			<div>
+				<!--summary panel-->
+				<div class="max-w-xs rounded">
+					<div class="info-card">
+						<div class="p-1">
+							<table class="my-2 text-xs">
+								<tbody>
+									<tr>
+										<td class="table-cell">
+											<span class="table-text-left"
+												>Code Postal Recherché:</span
+											>
+										</td>
+										<td class="table-text-right">{{ postalCode }}</td>
+									</tr>
+									<tr>
+										<td class="table-cell">
+											<span class="table-text-left">Ville:</span>
+										</td>
+										<td class="table-text-right">{{ ville }}</td>
+									</tr>
+									<tr>
+										<td class="table-cell">
+											<span class="table-text-left">Nombre d'Eléments</span>
+										</td>
+										<td class="table-text-right">{{ dataLength }}</td>
+									</tr>
+									<tr>
+										<td class="table-cell">
+											<span class="table-text-left">Mise à Jour</span>
+										</td>
+										<td class="table-text-right">{{ date | date }}</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+
+				<!--API data table-->
+				<div class="mt-6 overflow-x-auto shadow">
+					<table class="w-full border-collapse rounded-lg table-auto">
+						<thead>
+							<tr class="font-bold text-left text-white rounded-lg">
+								<th class="column-header">Nom</th>
+								<th class="column-header">Adresse</th>
+								<th class="column-header">Ferme</th>
+							</tr>
+						</thead>
+						<tbody class="text-sm font-normal text-gray-700 bg-white">
+							<tr
+								*ngFor="let data of ratpData; trackBy: trackByFn"
+								class="py-10 border-b border-gray-200">
+								<td class="table-cell">{{ data.fields.dea_nom_commerce }}</td>
+								<td class="table-cell">
+									{{ data?.fields?.dea_numero_rue_livraison }}
+								</td>
+								<td
+									class="table-cell"
+									*ngIf="data.fields.dea_jour_fermeture; else noData">
+									{{ data.fields.dea_jour_fermeture }}
+								</td>
+								<ng-template #noData>
+									<td class="table-cell">Pas de Données</td>
+								</ng-template>
+							</tr>
+						</tbody>
+					</table>
+				</div>
 			</div>
-		</div>
+		}
 	</div>
-</div>
+</body>
