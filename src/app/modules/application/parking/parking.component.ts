@@ -86,7 +86,6 @@ export class ParkingComponent implements OnInit {
 				}).bindPopup(markerText)
 			);
 		});
-		console.log('markerClusterData: ', this.markerClusterData);
 	}
 	onMapReady(map: L.Map) {
 		this.map = map;

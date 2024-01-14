@@ -12,29 +12,31 @@
 	<body class="min-h-screen min-w-screen">
 		<div
 			class="grid grid-cols-2 gap-2 p-2 mt-4 xs: sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-8">
-			<div
-				*ngFor="
-					let ratp of id === 'metros'
-						? (ratpTraffic$ | async)?.result?.metros
-						: id === 'rers'
-							? (ratpTraffic$ | async)?.result?.rers
-							: (ratpTraffic$ | async)?.result?.tramways;
-					let i = index
-				">
-				<div class="has-tooltip">
-					<span
-						class="p-1 -mt-8 bg-gray-100 rounded shadow-lg tooltip"
-						[ngStyle]="{
-							color: ratp.slug === 'normal' ? 'green' : '#CC5500'
-						}"
-						><p>{{ ratp.message }}</p></span
-					>
-					<app-ratp-card
-						class="transition-transform duration-300 ease-in-out transform cursor-pointer hover:scale-105"
-						[ratp]="ratp">
-					</app-ratp-card>
+			@for (
+				ratp of id === 'metros'
+					? (ratpTraffic$ | async)?.result?.metros
+					: id === 'rers'
+						? (ratpTraffic$ | async)?.result?.rers
+						: (ratpTraffic$ | async)?.result?.tramways;
+				track ratp;
+				let i = $index
+			) {
+				<div>
+					<div class="has-tooltip">
+						<span
+							class="p-1 -mt-8 bg-gray-100 rounded shadow-lg tooltip"
+							[ngStyle]="{
+								color: ratp.slug === 'normal' ? 'green' : '#CC5500'
+							}"
+							><p>{{ ratp.message }}</p></span
+						>
+						<app-ratp-card
+							class="transition-transform duration-300 ease-in-out transform cursor-pointer hover:scale-105"
+							[ratp]="ratp">
+						</app-ratp-card>
+					</div>
 				</div>
-			</div>
+			}
 		</div>
 	</body>
 }

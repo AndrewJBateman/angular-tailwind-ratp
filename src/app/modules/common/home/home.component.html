@@ -1,6 +1,6 @@
 <!--This HTML template includes a search bar, error checking, and displays data from an API
-  in a table format. The page layout is responsive and uses various CSS classes for styling.
-  The code snippet is not associated with a specific class, function, or method.-->
+in a table format. The page layout is responsive and uses various CSS classes for styling.
+The code snippet is not associated with a specific class, function, or method.-->
 <head>
 	<meta
 		name="description"
@@ -128,22 +128,21 @@
 							</tr>
 						</thead>
 						<tbody class="text-sm font-normal text-gray-700 bg-white">
-							<tr
-								*ngFor="let data of ratpData; trackBy: trackByFn"
-								class="py-10 border-b border-gray-200">
-								<td class="table-cell">{{ data.fields.dea_nom_commerce }}</td>
-								<td class="table-cell">
-									{{ data?.fields?.dea_numero_rue_livraison }}
-								</td>
-								<td
-									class="table-cell"
-									*ngIf="data.fields.dea_jour_fermeture; else noData">
-									{{ data.fields.dea_jour_fermeture }}
-								</td>
-								<ng-template #noData>
-									<td class="table-cell">Pas de Données</td>
-								</ng-template>
-							</tr>
+							@for (data of ratpData; track trackByFn($index, data)) {
+								<tr class="py-10 border-b border-gray-200">
+									<td class="table-cell">{{ data.fields.dea_nom_commerce }}</td>
+									<td class="table-cell">
+										{{ data?.fields?.dea_numero_rue_livraison }}
+									</td>
+									@if (data.fields.dea_jour_fermeture) {
+										<td class="table-cell">
+											{{ data.fields.dea_jour_fermeture }}
+										</td>
+									} @else {
+										<td class="table-cell">Pas de Données</td>
+									}
+								</tr>
+							}
 						</tbody>
 					</table>
 				</div>
