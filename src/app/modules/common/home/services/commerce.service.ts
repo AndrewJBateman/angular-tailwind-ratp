@@ -1,29 +1,40 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+/**
+ * CommerceService class responsible for fetching RATP commerce data from an API.
+ *
+ * @class
+ * @name CommerceService
+ * @public
+ */
+import { Injectable, inject } from '@angular/core';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { catchError, take, tap } from 'rxjs/operators';
+import { catchError } from 'rxjs/operators';
 
 import { RatpResponse } from '../../../common/home/models/ratp-commerce';
-
-const baseUrl = 'https://data.ratp.fr/api/records/1.0/search/?';
 
 @Injectable({
 	providedIn: 'root',
 })
 export class CommerceService {
+	private http = inject(HttpClient);
+	private readonly baseUrl = 'https://data.ratp.fr/api/records/1.0/search/?';
 	private ratpCommerceData: Observable<RatpResponse>;
 
-	constructor(private http: HttpClient) {}
-
 	getRatpCommerceData(query: string): Observable<RatpResponse> {
-		const userSearchUrl = `${baseUrl}dataset=commerces-de-proximite-agrees-ratp&q=${query}&rows=10&refine.sort=-code_postal`;
+		const params = new HttpParams()
+			.set('dataset', 'commerces-de-proximite-agrees-ratp')
+			.set('q', query)
+			.set('rows', '10')
+			.set('refine.sort', '-code_postal');
+
+		const userSearchUrl = `${this.baseUrl}${params.toString()}`;
+
 		this.ratpCommerceData = this.http.get<RatpResponse>(userSearchUrl).pipe(
-			tap(data => console.log(data)),
-			take(1),
 			catchError(err => {
-				throw 'error in getting API data. Details: ' + err;
+				throw new Error('Error in getting API data. Details: ' + err);
 			})
 		);
+
 		return this.ratpCommerceData;
 	}
 }

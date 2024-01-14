@@ -4,11 +4,11 @@
 		content="Ratp traffic info. page uses Tailwind-styled cards to display info. that can be clicked on to show a more detail." />
 </head>
 
-<div *ngIf="loading; else cards">
-	<app-spinner></app-spinner>
-</div>
-
-<ng-template #cards>
+@if (loading) {
+	<div>
+		<app-spinner></app-spinner>
+	</div>
+} @else {
 	<body class="min-h-screen min-w-screen">
 		<div
 			class="grid grid-cols-2 gap-2 p-2 mt-4 xs: sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-8">
@@ -17,14 +17,16 @@
 					let ratp of id === 'metros'
 						? (ratpTraffic$ | async)?.result?.metros
 						: id === 'rers'
-						? (ratpTraffic$ | async)?.result?.rers
-						: (ratpTraffic$ | async)?.result?.tramways;
+							? (ratpTraffic$ | async)?.result?.rers
+							: (ratpTraffic$ | async)?.result?.tramways;
 					let i = index
 				">
 				<div class="has-tooltip">
 					<span
 						class="p-1 -mt-8 bg-gray-100 rounded shadow-lg tooltip"
-						[ngStyle]="{ color: ratp.slug === 'normal' ? 'green' : '#CC5500' }"
+						[ngStyle]="{
+							color: ratp.slug === 'normal' ? 'green' : '#CC5500'
+						}"
 						><p>{{ ratp.message }}</p></span
 					>
 					<app-ratp-card
@@ -35,4 +37,4 @@
 			</div>
 		</div>
 	</body>
-</ng-template>
+}

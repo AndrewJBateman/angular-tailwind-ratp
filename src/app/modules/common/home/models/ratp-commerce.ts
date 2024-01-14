@@ -25,7 +25,7 @@ export interface Record {
 		dea_jour_fermeture?: string;
 		dea_commune_livraison: string;
 		dea_nom_commerce: string;
-		dea_numero_rue_livraison_dea_rue_livraison: string;
+		dea_numero_rue_livraison: string;
 	};
 	record_timestamp: string;
 	recordid: string;

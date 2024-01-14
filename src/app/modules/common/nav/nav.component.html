@@ -1,13 +1,18 @@
+<!--This code snippet represents an HTML navigation bar.
+  It consists of two sections, one on the left-hand side and one on the right-hand side.
+  The left section contains a link to the home page with an image and text,
+  while the right section contains a dropdown menu component and a link to the parking page.
+  The navigation bar is styled using flexbox and includes some additional classes for alignment
+  and styling.-->
 <nav
 	class="flex flex-row content-center justify-between w-full pt-1 pl-1 pr-3 font-sans text-center shadow navbar sm:items-baseline">
 	<!--navbar LHS-->
-	<div class="self-center">
+	<section class="self-center">
 		<a
 			class="nav-link"
 			aria-label="home nav link"
 			routerLink="/"
 			routerLinkActive="nav-link-active">
-
 			<div class="flex text-center">
 				<img
 					class="nav-left-icon"
@@ -19,10 +24,10 @@
 				<p class="pt-3">Commerces</p>
 			</div>
 		</a>
-	</div>
+	</section>
 
 	<!--navbar RHS-->
-	<div class="self-center">
+	<section class="self-center">
 		<app-ratp-dropdown />
 		<a
 			class="nav-right nav-link"
@@ -32,5 +37,5 @@
 			>Parking
 		</a>
 		<app-dropdown />
-	</div>
+	</section>
 </nav>
