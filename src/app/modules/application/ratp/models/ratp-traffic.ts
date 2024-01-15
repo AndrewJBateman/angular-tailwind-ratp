@@ -1,3 +1,6 @@
+/**
+ * Represents the interface for the RATP Traffic API response.
+ */
 export interface RatpTrafficApiResponse {
 	result: {
 		trafficId: RatpTraffic[];
