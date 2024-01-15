@@ -21,15 +21,7 @@ import { DropdownComponent } from './modules/common/nav/dropdowns/dropdown/dropd
 import { RatpDropdownComponent } from './modules/common/nav/dropdowns/ratp-dropdown/ratp-dropdown.component';
 
 @NgModule({
-	declarations: [
-		AppComponent,
-		NavComponent,
-		HomeComponent,
-		NotFoundComponent,
-		SvgInfoComponent,
-		DropdownComponent,
-		RatpDropdownComponent,
-	],
+	declarations: [AppComponent],
 	imports: [
 		BrowserModule,
 		AppRoutingModule,
@@ -42,6 +34,12 @@ import { RatpDropdownComponent } from './modules/common/nav/dropdowns/ratp-dropd
 		MatMenuModule,
 		MatIconModule,
 		MatButtonModule,
+		NavComponent,
+		HomeComponent,
+		NotFoundComponent,
+		SvgInfoComponent,
+		DropdownComponent,
+		RatpDropdownComponent,
 	],
 	providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }],
 	bootstrap: [AppComponent],

@@ -11,7 +11,10 @@ const routes: Routes = [
 	},
 	{
 		path: 'ratp/:id',
-		loadChildren: () => import('./modules/application/ratp/ratp.module'),
+		loadComponent: () =>
+			import('./modules/application/ratp/ratp.component').then(
+				m => m.RatpComponent
+			),
 	},
 	{
 		path: 'parking',

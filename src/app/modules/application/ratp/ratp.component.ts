@@ -13,19 +13,24 @@
  * - ngOnInit(): A method that is called when the component is initialized. It subscribes to the paramMap of the activated route to get the ID parameter,
  *   calls the getRatpTraffic method, and sets the loading flag to false.
  * - getRatpTraffic(): An async method that calls the getRatpTrafficData method of the TrafficService to fetch the RATP traffic data and assigns it to the ratpTraffic$ property.
- * - trackBySlug(index: string, ratp: RatpTraffic): A method used as a trackBy function for ngFor directive to track the RatpTraffic objects by their line property.
+ * - trackByLine(index: string, ratp: RatpTraffic): A method used as a trackBy function for ngFor directive to track the RatpTraffic objects by their line property.
  */
 import { Component, OnInit } from '@angular/core';
+import { CommonModule, AsyncPipe } from '@angular/common';
 import { Observable } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 
 import { RatpTraffic, RatpTrafficApiResponse } from './models/ratp-traffic';
 import { TrafficService } from './services/traffic.service';
+import { RatpCardComponent } from './ratp-card/ratp-card.component';
+import { SpinnerComponent } from '../../common/spinner/spinner.component';
 
 @Component({
 	selector: 'app-ratp',
 	templateUrl: './ratp.component.html',
 	styleUrls: ['./ratp.component.css'],
+	standalone: true,
+	imports: [AsyncPipe, CommonModule, RatpCardComponent, SpinnerComponent],
 })
 export class RatpComponent implements OnInit {
 	public ratpTraffic$: Observable<RatpTrafficApiResponse>;
