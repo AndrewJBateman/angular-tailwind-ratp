@@ -8,7 +8,7 @@
 import { Injectable, inject } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { catchError } from 'rxjs/operators';
+import { catchError, first } from 'rxjs/operators';
 
 import { RatpResponse } from '../../../common/home/models/ratp-commerce';
 
@@ -30,6 +30,7 @@ export class CommerceService {
 		const userSearchUrl = `${this.baseUrl}${params.toString()}`;
 
 		this.ratpCommerceData = this.http.get<RatpResponse>(userSearchUrl).pipe(
+			first(),
 			catchError(err => {
 				throw new Error('Error in getting API data. Details: ' + err);
 			})

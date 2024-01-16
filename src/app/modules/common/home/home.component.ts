@@ -11,8 +11,6 @@
  *
  * @param {CommerceService} commerceService - The service for retrieving data from the API.
  */
-import { catchError } from 'rxjs/operators';
-import { throwError } from 'rxjs';
 import { Component, ViewChild } from '@angular/core';
 import { NgForm, FormsModule } from '@angular/forms';
 
@@ -53,21 +51,12 @@ export class HomeComponent {
 	}
 
 	onSearchData(postCode: string): void {
-		// Reset dataToShow & displayCleared variables. Set showLoadingIndicator to true
-		this.dataToShow = false;
+		// Reset displayCleared variables. Set showLoadingIndicator to true
 		this.displayCleared = false;
 		this.showLoadingIndicator = true;
 
 		this.commerceService
 			.getRatpCommerceData(postCode)
-			.pipe(
-				catchError(err => {
-					return throwError(
-						() =>
-							`There was a problem fetching data from the RATP API: ${err.error.errors.toString()}`
-					);
-				})
-			)
 			.subscribe((data: RatpResponse) => {
 				this.postalCode = data.parameters.q;
 				this.ratpData = data.records;
@@ -86,7 +75,7 @@ export class HomeComponent {
 	}
 
 	trackByFn(index: number, data: Record): string {
-		return data.recordid;
+		return data.datasetid;
 	}
 
 	clearSearch(): void {
