@@ -1,5 +1,7 @@
 <div>
-	<h2 mat-dialog-title class="title">Places de stationnment PMR</h2>
+	<mat-dialog-title mat-dialog-title class="title"
+		>Places de stationnment PMR</mat-dialog-title
+	>
 	<mat-dialog-content>
 		<p>
 			Il y a <span class="emphasis">{{ data.spaces }}</span> places de
@@ -21,7 +23,7 @@
 				<span class="emphasis">Seine Ouest</span>
 			</a>
 		</p>
-		<p>Modifié: mai 2022</p>
+		<p>Modifié: jan. 2024</p>
 	</mat-dialog-content>
 	<mat-dialog-actions align="end">
 		<button mat-mini-fab color="primary" (click)="onCloseDialog()">

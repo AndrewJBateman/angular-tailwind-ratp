@@ -1,13 +1,15 @@
+<!--This code snippet represents an HTML template for an app that shows details of a map.
+  It includes a meta tag for description and a div element with various classes and
+  attributes for displaying the map.
+  Inside the div, there are buttons for zooming in and out, changing layers, and
+  displaying information. The code also includes Angular directives and event handlers
+  for interacting with the map.-->
 <head>
 	<meta name="description" content="Shows details of app" />
-	<meta />
 	<link
 		rel="prefetch"
 		as="document"
-		src="https://github.com/AndrewJBateman/angular-tailwind-ratp"
-		Set-Cookie:
-		CookieName="CookieValue;"
-		SameSite="Lax;" />
+		src="https://github.com/AndrewJBateman/angular-tailwind-ratp" />
 </head>
 <div class="min-h-screen min-w-screen ratp-green" id="leaflet-container">
 	<div class="flex justify-center w-full h-screen mx-auto">
@@ -22,44 +24,37 @@
 			[leafletMarkerClusterOptions]="markerClusterOptions"
 			(leafletMapReady)="onMapReady($event)">
 			<div class="controls">
-				<div
-					id="zoom-in"
+				<button
 					class="control"
-					(onClick)="zoomIn()"
-					(onKeyUp)="zoomIn()"
+					(click)="zoomIn()"
+					(keyup)="zoomIn()"
 					role="button"
-					[class.disabled]="zoom >= zoomMax"
+					[disabled]="zoom >= zoomMax"
 					matTooltip="Zoom avant">
 					<mat-icon>zoom_in</mat-icon>
-				</div>
-				<div
-					id="zoom-out"
+				</button>
+				<button
 					class="control"
-					(onClick)="zoomOut()"
-					(onKeyUp)="zoomOut()"
+					(click)="zoomOut()"
 					role="button"
-					[class.disabled]="zoom <= zoomMin"
+					[disabled]="zoom <= zoomMin"
 					matTooltip="Zoom arrière">
 					<mat-icon>zoom_out</mat-icon>
-				</div>
-				<div
-					id="layers"
+				</button>
+				<button
 					class="control"
-					(onClick)="nextLayer()"
-					(onKeyUp)="nextLayer()"
+					(click)="nextLayer()"
 					role="button"
 					matTooltip="Cartes">
 					<mat-icon>layers</mat-icon>
-				</div>
-				<div
-					id="info"
+				</button>
+				<button
 					class="control"
-					(onClick)="popupInfo()"
-					(onKeyUp)="popupInfo()"
+					(click)="popupInfo()"
 					role="button"
 					matTooltip="Information">
 					<mat-icon>info</mat-icon>
-				</div>
+				</button>
 			</div>
 		</div>
 	</div>

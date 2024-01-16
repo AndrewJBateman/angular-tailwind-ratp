@@ -1,15 +1,65 @@
-import { Component, OnInit } from '@angular/core';
+/**
+ * ParkingComponent class represents a component for displaying parking information on a map.
+ * It uses the Leaflet library for map rendering and marker clustering.
+ * The component allows zooming in and out, changing the map layer, and displaying a
+ * popup dialog with parking information.
+ *
+ * Properties:
+ * - map: The Leaflet map object.
+ * - zoom: The current zoom level of the map.
+ * - zoomMax: The maximum allowed zoom level.
+ * - zoomMin: The minimum allowed zoom level.
+ * - center: The center coordinates of the map.
+ * - layer_OpenStreetMap: The OpenStreetMap tile layer.
+ * - layer_ArcGISStreets: The ArcGIS Streets tile layer.
+ * - layer_ArcGISSatellite: The ArcGIS Satellite tile layer.
+ * - currentLayer: The currently selected tile layer.
+ * - layers: An array of tile layers to be displayed on the map.
+ * - options: Additional options for the map.
+ * - markerClusterData: An array of marker cluster data.
+ * - markerClusterOptions: Options for the marker clustering.
+ *
+ * Methods:
+ * - ngOnInit(): Initializes the component and sets up the marker cluster data.
+ * - onMapReady(map: L.Map): Callback function when the map is ready.
+ * - zoomIn(): Increases the zoom level of the map.
+ * - zoomOut(): Decreases the zoom level of the map.
+ * - nextLayer(): Switches to the next tile layer.
+ * - popupInfo(): Opens a popup dialog with parking information.
+ * - _updateLayers(): Updates the layers array with the current tile layer.
+ */
+import { Component, OnInit, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import * as L from 'leaflet';
 import 'leaflet.markercluster';
 import { MatDialog } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { ParkingDialogComponent } from './components/parking-dialog/parking-dialog.component';
 import { parisData } from './paris.data';
+import { MatIconModule } from '@angular/material/icon';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { LeafletMarkerClusterModule } from '@asymmetrik/ngx-leaflet-markercluster';
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 
 @Component({
 	selector: 'app-parking',
 	templateUrl: './parking.component.html',
 	styleUrls: ['./parking.component.css'],
+	standalone: true,
+	imports: [
+		CommonModule,
+		MatButtonModule,
+		MatDialogModule,
+		ParkingComponent,
+		ParkingDialogComponent,
+		LeafletModule,
+		LeafletMarkerClusterModule,
+		MatTooltipModule,
+		MatIconModule,
+	],
+	schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class ParkingComponent implements OnInit {
 	map: L.Map;
@@ -52,6 +102,7 @@ export class ParkingComponent implements OnInit {
 		maxZoom: this.zoomMax,
 	};
 
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	markerClusterData: any[] = [];
 
 	markerClusterOptions: L.MarkerClusterGroupOptions = {

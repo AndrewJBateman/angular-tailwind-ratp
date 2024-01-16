@@ -18,7 +18,10 @@ const routes: Routes = [
 	},
 	{
 		path: 'parking',
-		loadChildren: () => import('./modules/application/parking/parking.module'),
+		loadComponent: () =>
+			import('./modules/application/parking/parking.component').then(
+				m => m.ParkingComponent
+			),
 	},
 	{
 		path: 'about',
