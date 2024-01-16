@@ -1,20 +1,25 @@
+<!--This code snippet represents a HTML section that displays a 404 error page.
+  It includes a header, a message, and a footer with a link to the homepage.
+  The section is styled using CSS classes for layout, typography, and colors.
+  The code snippet can be used as a template for creating a custom 404 error page in a
+  web application.-->
 <head>
 	<meta name="description" content="page not found error" />
 </head>
 
-<div class="flex bg-gray-100 h-screen w-full py-32 justify-center">
-	<div class="p-12 text-center max-w-6/12 shadow-xl rounded-lg border">
-		<div class="md:text-3xl text-3xl font-bold pt-10">
+<section class="flex justify-center w-full h-screen py-32 bg-gray-100">
+	<article class="p-12 text-center border rounded-lg shadow-xl max-w-6/12">
+		<header class="pt-10 text-3xl font-bold md:text-3xl">
 			404: Page non trouvée
-		</div>
-		<div class="text-xl font-normal mt-4">
+		</header>
+		<div class="mt-4 text-xl font-normal">
 			Oh mon Dieu!, la page que vous recherchez n'existe pas.
 		</div>
-		<div class="mt-6 flex justify-center h-12 relative">
+		<footer class="relative flex justify-center h-12 mt-6">
 			<div
-				class="flex shadow-md font-medium absolute py-2 px-4 text-green-100 cursor-pointer bg-green-600 rounded text-lg tr-mt svelte-jqwywd">
-				<a href="/">Aller à la page d'accueil</a>
+				class="absolute flex px-4 py-2 text-lg font-medium text-green-100 bg-green-600 rounded shadow-md cursor-pointer tr-mt svelte-jqwywd">
+				<a href="/" title="Go to the homepage">Aller à la page d'accueil</a>
 			</div>
-		</div>
-	</div>
-</div>
+		</footer>
+	</article>
+</section>

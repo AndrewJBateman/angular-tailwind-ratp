@@ -1,13 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { HomeComponent } from './modules/common/home/home.component';
-import { NotFoundComponent } from './modules/common/not-found/not-found.component';
-
 const routes: Routes = [
 	{
 		path: '',
-		component: HomeComponent,
+		loadComponent: () =>
+			import('./modules/common/home/home.component').then(m => m.HomeComponent),
 	},
 	{
 		path: 'ratp/:id',
@@ -25,13 +23,25 @@ const routes: Routes = [
 	},
 	{
 		path: 'about',
-		loadChildren: () => import('./modules/common/about/about.module'),
+		loadComponent: () =>
+			import('./modules/common/about/about.component').then(
+				m => m.AboutComponent
+			),
 	},
 	{
 		path: 'contact',
-		loadChildren: () => import('./modules/common/contact/contact.module'),
+		loadComponent: () =>
+			import('./modules/common/contact/contact.component').then(
+				m => m.ContactComponent
+			),
 	},
-	{ path: '**', component: NotFoundComponent },
+	{
+		path: '**',
+		loadComponent: () =>
+			import('./modules/common/not-found/not-found.component').then(
+				m => m.NotFoundComponent
+			),
+	},
 ];
 
 @NgModule({

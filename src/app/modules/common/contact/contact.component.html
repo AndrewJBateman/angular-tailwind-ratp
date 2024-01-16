@@ -1,19 +1,19 @@
+<!--
+This code snippet is an HTML template that displays contact details of the author.
+It includes a meta tag for description, prefetch links for API requests, and a div
+container with various elements for displaying the author's information.
+The author's name, bio, number of GitHub repos, location, and last update date are
+displayed in a table format. The snippet also includes links to the author's GitHub profile
+and a contact form. The code is written in a mix of HTML and template syntax
+(e.g., using Angular's async pipe and string slicing filters).
+-->
 <head>
 	<meta name="description" content="Shows contact details of author" />
 	<link
 		rel="prefetch"
 		as="document"
-		src="https://api.github.com/users/andrewjbateman"
-		Set-Cookie:
-		CookieName="CookieValue;"
-		SameSite="Lax;" />
-	<link
-		rel="prefetch"
-		as="document"
-		src="https://andrewbateman.org/contact"
-		Set-Cookie:
-		CookieName="CookieValue;"
-		SameSite="Lax;" />
+		src="https://api.github.com/users/andrewjbateman" />
+	<link rel="prefetch" as="document" src="https://andrewbateman.org/contact" />
 </head>
 
 <div class="min-h-screen min-w-screen ratp-green">
@@ -24,10 +24,10 @@
 					<div class="px-2 pt-5 photo-wrapper">
 						<img
 							class="w-40 h-40 mx-auto rounded-full"
-							width="40px"
-							height="40px"
+							width="40"
+							height="40"
 							src="../../../assets/svgs/contact.svg"
-							alt="Image of author at pc"
+							alt="Profile picture of the author working on a computer"
 							loading="lazy" />
 					</div>
 					<div class="p-2">
@@ -75,14 +75,14 @@
 								class="mr-5 text-xs italic font-medium text-indigo-600 hover:underline hover:text-indigo-800"
 								href="https://github.com/AndrewJBateman"
 								target="_blank"
-								rel="noopener noreferrer"
+								rel="noreferrer"
 								>Voir mon profil Github</a
 							>
 							<a
 								class="text-xs italic font-medium text-indigo-600 hover:underline hover:text-indigo-800"
 								href="https://andrewbateman.org/contact"
 								target="_blank"
-								rel="noopener noreferrer"
+								rel="noreferrer"
 								>Envoyer un message</a
 							>
 						</div>

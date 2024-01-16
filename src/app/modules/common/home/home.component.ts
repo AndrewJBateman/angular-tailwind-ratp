@@ -14,15 +14,18 @@
 import { catchError } from 'rxjs/operators';
 import { throwError } from 'rxjs';
 import { Component, ViewChild } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { NgForm, FormsModule } from '@angular/forms';
 
 import { environment } from '../../../../environments/environment';
 import { CommerceService } from './services/commerce.service';
 import { RatpResponse, Record } from './models/ratp-commerce';
+import { DatePipe } from '@angular/common';
 
 @Component({
 	selector: 'app-home',
 	templateUrl: './home.component.html',
+	standalone: true,
+	imports: [FormsModule, DatePipe],
 })
 export class HomeComponent {
 	@ViewChild('form') form: NgForm;
