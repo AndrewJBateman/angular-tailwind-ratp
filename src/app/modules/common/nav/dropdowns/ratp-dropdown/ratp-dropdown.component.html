@@ -1,5 +1,20 @@
+<!--This code snippet represents a dropdown menu component in HTML.
+It consists of a container div with a button and an unordered list.
+The button serves as the trigger for the dropdown menu, and the list contains the menu items.
+The dropdown menu is styled using CSS classes such as "relative", "inline-block",
+"rounded", "hidden", "pt-1", "nav-right", "nav-link", "dropdown-menu", etc.
+These classes define the positioning, appearance, and behavior of the dropdown menu.
+
+Inside the button, there is a span element with the text "RATP" and an SVG element
+that displays an arrow icon.
+The SVG element is styled using the "w-4", "h-4", and "fill-current" classes.
+
+The unordered list contains three list items, each representing a menu item. Each menu item is an anchor element styled with various CSS classes. The anchor elements have attributes such as "aria-label", "[routerLink]", "routerLinkActive", "role", and "tabindex" that define their accessibility and routing behavior.-->
 <div class="relative inline-block dropdown">
-	<button class="inline-flex rounded nav-right nav-link">
+	<button
+		class="inline-flex rounded nav-right nav-link"
+		role="button"
+		tabindex="0">
 		<span class="mr-1">RATP</span>
 		<svg
 			class="w-4 h-4 fill-current"
@@ -16,6 +31,8 @@
 				aria-label="ratp nav link"
 				[routerLink]="['/ratp', 'metros']"
 				routerLinkActive="nav-link-active"
+				role="link"
+				tabindex="0"
 				>metros</a
 			>
 		</li>
@@ -25,6 +42,8 @@
 				aria-label="ratp nav link"
 				[routerLink]="['/ratp', 'rers']"
 				routerLinkActive="nav-link-active"
+				role="link"
+				tabindex="0"
 				>rers</a
 			>
 		</li>
@@ -34,6 +53,8 @@
 				aria-label="ratp nav link"
 				[routerLink]="['/ratp', 'tramways']"
 				routerLinkActive="nav-link-active"
+				role="link"
+				tabindex="0"
 				>trams</a
 			>
 		</li>
