@@ -1,26 +1,31 @@
-<button
-	mat-icon-button
-	[matMenuTriggerFor]="menu"
-	aria-label="Menu icon button">
+<!--This code snippet represents a HTML template for a menu icon button with a dropdown menu.
+  It uses Angular Material components for styling and functionality.
+The button is decorated with a material icon and triggers the dropdown menu when clicked.
+The dropdown menu contains two buttons, each representing a navigation link.
+The buttons are styled with CSS classes and have tooltips.
+They also use the Angular router to navigate to different routes when clicked.
+The active link is highlighted with a CSS class.
+The code snippet is enclosed in a div element with a fixed width of 150px. -->
+<button mat-icon-button [matMenuTriggerFor]="menu" title="Menu icon button">
 	<mat-icon>more_vert</mat-icon>
 </button>
 <mat-menu #menu="matMenu">
 	<div style="width: 150px">
 		<button
 			class="nav-right nav-link dropdown-button"
-			aria-label="about nav link"
+			matTooltip="about nav link"
 			mat-menu-item
 			routerLink="/about"
-			routerLinkActive="nav-link-active">
+			[class.nav-link-active]="router.isActive(aboutRoute, true)">
 			<mat-icon>info_outline</mat-icon>
 			<span>A Propos</span>
 		</button>
 		<button
 			class="nav-right nav-link dropdown-button"
-			aria-label="contact nav link"
+			matTooltip="contact nav link"
 			mat-menu-item
 			routerLink="/contact"
-			routerLinkActive="nav-link-active">
+			[class.nav-link-active]="router.isActive(contactRoute, true)">
 			<mat-icon>contact_mail</mat-icon>
 			<span>Contact</span>
 		</button>

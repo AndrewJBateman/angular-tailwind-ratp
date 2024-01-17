@@ -41,7 +41,7 @@
 						"optimization": false,
 						"namedChunks": true,
             "allowedCommonJsDependencies": [
-              "leaflet"
+              "leaflet", "leaflet.markercluster"
            ]
 					},
 					"configurations": {
