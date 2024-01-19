@@ -33,7 +33,8 @@
 * About and Contact pages give more information on app using Tailwind css cards
 * Website is in French
 * To build for production Tailwind’s purge option is used to tree-shake unused styles and optimize final build size.
-* [rxjs take(1) operater](https://advancedweb.hu/rxjs-the-differences-between-first-take-1-and-single/) used to take first element from the Ratp & Github observables then close them, so unsubscribing is not necessary.
+* [rxjs take(1) operater](https://advancedweb.hu/rxjs-the-differences-between-first-take-1-and-single/) used to take first element from the Github observable then close it, so unsubscribing is not necessary.
+* Latest ng flow control @if and @for used in HTML templates.
 
 ## :camera: Screenshots
 
@@ -71,19 +72,23 @@ for mobile-friendly interactive maps
 * `ratp.service.ts` - function to fetch RATP API data based on a postcode string input
 
 ```typescript
-getRatpData(query: string): Observable<RatpResponse> {
-    const userSearchUrl = `${baseUrl}dataset=liste-des-commerces-de-proximite-agrees-ratp&q=${query}&rows=1052&sort=-code_postal&facet=tco_libelle&facet=code_postal`;
-    this.ratpResponseData = this.http.get<RatpResponse>(userSearchUrl).pipe(
-      take(1),
-      catchError((err) => {
-        return throwError(
-          'There was a problem fetching data from the RATP API, error: ',
-          err
-        );
-      })
-    );
-    return this.ratpResponseData;
-  }
+getRatpCommerceData(query: string): Observable<RatpResponse> {
+  const params = new HttpParams()
+    .set('dataset', 'commerces-de-proximite-agrees-ratp')
+    .set('q', query)
+    .set('rows', '10')
+    .set('refine.sort', '-code_postal');
+
+  const userSearchUrl = `${this.baseUrl}${params.toString()}`;
+
+  this.ratpCommerceData = this.http.get<RatpResponse>(userSearchUrl).pipe(
+    catchError(err => {
+      throw new Error('Error in getting API data. Details: ' + err);
+    })
+  );
+
+  return this.ratpCommerceData;
+}
 ```
 
 ## :cool: Features
@@ -100,7 +105,7 @@ getRatpData(query: string): Observable<RatpResponse> {
 ## :clipboard: Status & To-Do List
 
 * Status: Working, deployed to Netlify. All files pass linting. App passes unit tests.
-* To-Do: Correct & uncomment index.html CSP. Redo SSR. Add tests
+* To-Do: Correct Home delay to render results & uncomment index.html CSP. Redo SSR. Add tests
 
 ## :clap: Inspiration
 
